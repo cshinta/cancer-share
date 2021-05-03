@@ -14,7 +14,7 @@ Must have : Git and Composer
 
 Clone the repository
 
-    git clone https://github.com/cshinta/cancer-share.git
+    git clone <your repo link>
 
 Switch to the repo folder
 
@@ -44,7 +44,7 @@ You can now access the server at http://localhost:8000
 
 **TL;DR command list**
 
-    git clone https://github.com/cshinta/cancer-share.git
+    git clone <your repo link>
     cd cancer-share
     composer install
     cp .env.example .env

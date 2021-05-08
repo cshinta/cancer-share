@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+#error_reporting (E_ALL ^ E_NOTICE);
+
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
@@ -9,6 +11,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Input;
 
 class RegisteredUserController extends Controller
 {
@@ -38,11 +41,22 @@ class RegisteredUserController extends Controller
             'username' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|confirmed|min:8',
+            'avatar' => 'image|mimes:jpg,jpeg,png'
         ]);
-
+        
+        if($request->hasFile('avatar')) {
+            $image = $request->file('avatar');
+            $imageName = $request['username'];  
+            $avatarPath = $image->storeAs('public/avatars/', $imageName.'.jpeg');
+        }
+        
         $user = User::create([
+            'firstname' => $request->firstname,
+            'lastname' => $request->lastname,
             'username' => $request->username,
+            'email' => $request->email,
             'password' => Hash::make($request->password),
+            'avatar' => $avatarPath
         ]);
 
         event(new Registered($user));

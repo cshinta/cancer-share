@@ -24,6 +24,10 @@ Install all the dependencies using composer
 
     composer install
 
+Install all the dependencies using npm
+
+    npm install
+
 Copy the example env file and make the required configuration changes in the .env file
 
     cp .env.example .env
@@ -47,6 +51,7 @@ You can now access the server at http://localhost:8000
     git clone <your repo link>
     cd cancer-share
     composer install
+    npm install
     cp .env.example .env
     php artisan key:generate
     

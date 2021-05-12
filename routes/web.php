@@ -25,6 +25,10 @@ Route::get('/forgot-password', function () {
     return view('auth.lupapassword');
 });
 
+Route::get('/dashboard-profile', function () {
+    return view('profile.dashboard');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

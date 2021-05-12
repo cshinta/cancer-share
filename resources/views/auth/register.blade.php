@@ -1,3 +1,10 @@
+<html lang="en">
+<head>
+    <title>Register</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+</head>
+
+<body>
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
@@ -9,7 +16,7 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
             @csrf
 
             <!-- First Name -->
@@ -58,7 +65,26 @@
                                 type="password"
                                 name="password_confirmation" required />
             </div>
+            
+            <!-- Avatar -->
+            <div class="mt-4">
+                <x-label for="avatar" :value="__('Avatar')"/>
+            </div>
+            <div class="mt-1 form-file-group" style="background-color:aqua; 
+                                                     width:200px; 
+                                                     height:200px; 
+                                                     border-radius:50%">
+                <input type="file" style="display:none" id="avatar" name="avatar" onchange="preview(this)"/>
+                <p onclick="document.querySelector('#avatar').click()" style="text-align:center; 
+                                                                              line-height:200px;">click here</p>
+            </div>
+            <div class="mt-1" id="previewBox" style="display:none">
+                <img src="" id="previewImg" style="width:200px; 
+                                                   height:200px; 
+                                                   border-radius:50%" onclick="document.querySelector('#avatar').click()">
+            </div>
 
+            <!-- If already registered -->
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
@@ -71,3 +97,19 @@
         </form>
     </x-auth-card>
 </x-guest-layout>
+
+<script>
+    function preview(input) {
+        let file = $("input[type=file]").get(0).files[0];
+        if(file) {
+            let reader = new FileReader();
+            reader.onload = function() {
+                $("#previewImg").attr('src', reader.result);
+                $("#previewBox").css('display', 'block');
+            }
+            $(".form-file-group").css('display', 'none');
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
+</body>

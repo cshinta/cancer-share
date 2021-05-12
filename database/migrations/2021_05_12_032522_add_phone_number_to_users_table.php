@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReportsTable extends Migration
+class AddPhoneNumberToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateReportsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reports', function (Blueprint $table) {
-            $table->id();
-            $table->string('postID');
-            $table->text('content');
-            $table->integer('type');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('phone', 13);
         });
     }
 
@@ -29,6 +25,8 @@ class CreateReportsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reports');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 }

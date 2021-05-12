@@ -1,56 +1,119 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<!DOCTYPE html>
+<html>
+<head>
+<title>LOGIN</title>   
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;
+margin: 0;}
+* {box-sizing: border-box;}
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+.input-container {
+ display: -ms-flexbox; 
+ display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+  
+}
+.main{height: 9.25cm;}
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+.icon {
+  padding: 10px;
+  background: #98B1C4;
+  color:black;
+  width: 50px;
+  text-align: center;
+}
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  font-size: medium;
+  
+}
 
-            <!-- Username -->
-            <div>
-                <x-label for="username" :value="__('Username')" />
+.btn {
+  background-color: black;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  font-size: medium;
+  
+}
 
-                <x-input id="username" class="block mt-1 w-full" type="text" name="username" required autofocus />
-            </div>
+.btn:hover {
+  opacity: 1;
+}
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
+.imgcontainer {
+  text-align: center;
+  margin: 20px 0 12px 0;
+}
 
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
-            </div>
+img.avatar {
+  width: 15%;
 
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
+}
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
+input{
+    background-color: #98B1C4;
+    border : none;
+}
+.opsi {
+  height: 3px;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 16px;
+  color: black;
+  }
 
-                <x-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+  a:link{
+    text-decoration:none;
+    color: black;
+  }
+  a:hover{
+    color: blue;
+  }
+
+footer {
+  background-color:#033D68;
+;
+  text-align: center;
+  color: white;
+  width: auto;
+  height: 1cm;
+  padding: 1px;
+  font-size: 13px;
+}
+</style>
+</head>
+<body>
+
+    <div class="imgcontainer">
+    {{ HTML::asset('img/logo.png', 'alt logo', array('class' => 'logo')) }}
+      </div>
+      <div class="main">
+      <form action="####" style="max-width:500px;margin:auto">
+        <div class="input-container">
+          <i class="fa fa-user icon"></i>
+          <input class="input-field" type="text" placeholder="Username" name="usrnm">
+        </div>
+        <div class="input-container">
+          <i class="fa fa-lock icon"></i>
+          <input class="input-field" type="password" placeholder="Password" name="psw">
+        </div>
+        <button type="submit" class="btn">Masuk</button>   
+      </form>
+      <p class="opsi"> <a href="#" > Lupa Kata Sandi?</a> <b> |<a href="#"> Daftar</a></b><p>
+    </div>
+     <footer>
+      <p>© 2021 Pikachu inc. All Rights Reserved.</p>
+     </footer>
+      
+</body>
+</html>

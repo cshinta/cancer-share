@@ -2,7 +2,6 @@
 
   @section('content')
 
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <style>
           .input-container {
               display: -ms-flexbox;
@@ -80,10 +79,11 @@
 
       <main>
           <div class="imgcontainer">
-              <img src="{{ asset('img/logo.png') }}">
+              <img src="{{ asset('img/logo.png') }}" class="avatar">
           </div>
           <div class="main">
-              <form action="####" style="max-width:500px;margin:auto">
+              <form method="POST" action="{{ url('/login') }}" style="max-width:500px;margin:auto">
+                @csrf
                   <div class="input-container">
                       <i class="fa fa-user icon"></i>
                       <input class="input-field" type="text" placeholder="Username" name="usrnm">

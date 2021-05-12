@@ -1,4 +1,4 @@
-# ![Cancer Share App](logo.png)
+# ![Cancer Share App](public/img/logo.png)
 
 > ### Cancer Share App to fullfill Web Programming's Project
 

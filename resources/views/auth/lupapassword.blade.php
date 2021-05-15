@@ -17,7 +17,6 @@
               margin: 10px;
               display: inline-block;
               border: 1px solid #9B9B9B;
-              ;
               box-sizing: border-box;
               border-radius: 10px;
               background-color: #EDEDED;
@@ -48,6 +47,7 @@
           .imglock {
               text-align: center;
               margin: 20px 0 px 0;
+              margin-bottom: 1%;
           }
 
           img.avatar {
@@ -88,15 +88,42 @@
               font-family: 'Signika';
               font-size: 20px;
               margin: 2.8%;
+              font-weight: bold;
+              
           }
 
-          a:link {
+          a{
               text-decoration: none;
               color: black;
           }
 
           a:hover {
               color: blue;
+          }
+
+          .separator {
+              padding-top: 2%;
+              display: flex;
+              align-items: center;
+              text-align: center;
+              color: #B5B2B2;
+          }
+
+          .separator::before,
+          .separator::after {
+              content: '';
+              flex: 1;
+              border-bottom: 1px solid #B5B2B2;
+          }
+
+          .separator:not(:empty)::before {
+              margin-left: 33%;
+              margin-right: 3em;
+          }
+
+          .separator:not(:empty)::after {
+              margin-right: 33%;
+              margin-left: 3em;
           }
 
       </style>
@@ -117,8 +144,8 @@
                       <button type="submit">Kirim Link Pulihan</button>
                   </div>
               </form>
+              <div class="separator">atau</div>
           </div>
-          <h4>atau</h4>
-          <h5><a href="#">Buat Akun Baru</a></h5>
+          <h5><a href="/register">Buat Akun Baru</a></h5>
       </main>
   @endsection

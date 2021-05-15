@@ -3,13 +3,12 @@
         background-color: #033D68;
         text-align: center;
         color: white;
-        width: auto;
-        height: 1cm;
-        padding: 1px;
-        font-size: 13px;
-        bottom: 0;
+        padding-top: 0.5em;
+        font-size: 18px;
         width: 100%;
+        font-weight: bold;
         position: absolute;
+        height: 50px;
     }
 
 </style>

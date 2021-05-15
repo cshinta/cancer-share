@@ -3,11 +3,17 @@
     padding: 0;
 }
 
-body {
-    height: 100%;
+body{
     font-family: "Signika", sans-serif;
+    height:100%;
 }
 
 * {
     box-sizing: border-box;
 }
+
+#main-container{
+    height: calc(100vh - 50px);
+    overflow: hidden;
+}
+

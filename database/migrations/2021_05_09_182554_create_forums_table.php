@@ -18,7 +18,7 @@ class CreateForumsTable extends Migration
             $table->string('image');
             $table->string('title');
             $table->text('content');
-            $table->integer('author');
+            $table->integer('authorID');
             $table->integer('type');
             $table->timestamps();
         });

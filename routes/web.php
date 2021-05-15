@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,31 @@ Route::post('/login', 'AuthenticatedSessionController@store');
 
 Route::get('/dashboard', function () {
     return view('profile.dashboard');
+});
+
+// Route::get('/send-email',[MailController::class,'basic_email']);
+
+Route::get('/forum', function () {
+    return view('forum.index');
+});
+
+Route::get('/reset-password', function () {
+    return view('auth.resetpassword');
+});
+
+Route::get('/change-password', function () {
+    return view('auth.ubahpassword');
+});
+
+Route::get('/register', function () {
+    return view('auth.register');
+});
+Route::get('/sunting-profil', function () {
+    return view('auth.suntingprofil');
+});
+
+Route::get('/lihat-profil', function () {
+    return view('profile.lihatprofil');
 });
 
 require __DIR__ . '/auth.php';

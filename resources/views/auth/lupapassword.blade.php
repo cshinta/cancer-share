@@ -90,7 +90,7 @@
               margin: 2.8%;
           }
 
-          a:link {
+          a {
               text-decoration: none;
               color: black;
           }
@@ -119,6 +119,6 @@
               </form>
           </div>
           <h4>atau</h4>
-          <h5><a href="#">Buat Akun Baru</a></h5>
+          <h5><a href="/register">Buat Akun Baru</a></h5>
       </main>
   @endsection

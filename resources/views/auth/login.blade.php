@@ -8,6 +8,7 @@
               display: flex;
               width: 100%;
               margin-bottom: 15px;
+              background: #98B1C4
 
           }
 
@@ -24,6 +25,7 @@
               padding: 10px;
               outline: none;
               font-size: medium;
+              
 
           }
 
@@ -66,7 +68,7 @@
               color: black;
           }
 
-          a:link {
+          a{
               text-decoration: none;
               color: black;
           }
@@ -94,7 +96,7 @@
                   </div>
                   <button type="submit" class="btn">Masuk</button>
               </form>
-              <p class="opsi"> <a href="#"> Lupa Kata Sandi?</a> <b> |<a href="#"> Daftar</a></b>
+              <p class="opsi"> <a href="/forgot-password"> Lupa Kata Sandi?</a> <b> |<a href="/register"> Daftar</a></b>
               <p>
           </div>
 

@@ -32,4 +32,26 @@ Route::get('/dashboard', function () {
     return view('profile.dashboard');
 });
 
-require __DIR__ . '/auth.php';
+Route::get('/reset-password', function () {
+    return view('auth.resetpassword');
+});
+
+Route::get('/change-password', function () {
+    return view('auth.ubahpassword');
+});
+
+Route::get('/register', function () {
+    return view('auth.register');
+});
+Route::get('/sunting-profil', function () {
+    return view('auth.suntingprofil');
+});
+
+Route::get('/lihat-profil', function () {
+    return view('profile.lihatprofil');
+});
+
+require __DIR__.'/auth.php';
+
+
+

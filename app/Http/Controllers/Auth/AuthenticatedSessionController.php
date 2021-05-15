@@ -10,15 +10,6 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthenticatedSessionController extends Controller
 {
-    /**
-     * Display the login view.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function create()
-    {
-        return view('auth.login');
-    }
 
     /**
      * Handle an incoming authentication request.
@@ -41,14 +32,14 @@ class AuthenticatedSessionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Request $request)
-    {
-        Auth::guard('web')->logout();
+    // public function destroy(Request $request)
+    // {
+    //     Auth::guard('web')->logout();
 
-        $request->session()->invalidate();
+    //     $request->session()->invalidate();
 
-        $request->session()->regenerateToken();
+    //     $request->session()->regenerateToken();
 
-        return redirect('/');
-    }
+    //     return redirect('/');
+    // }
 }

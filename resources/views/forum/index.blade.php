@@ -21,12 +21,8 @@
                         <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <div class="add-button">
-
                                 <i class="fas fa-filter" id="filter-icon"></i>
-
-
                                 <p id="add-text">Filter</p>
-
                             </div>
                         </button>
                         <div class="dropdown-menu filter-menu">
@@ -47,7 +43,7 @@
                     <p class="card-text">
                     <div class="row">
                         <div class="forum-pic">
-                            <img src="{{ asset('img/avatar.png') }}" class="avatar-forum">
+                            <img src="{{ asset('img/profilAvatar.png') }}" class="avatar-forum">
                         </div>
                         <div class="col-10 forum-isi">
                             <div class="user-and-type">

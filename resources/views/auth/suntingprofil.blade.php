@@ -1,7 +1,5 @@
-@extends('layouts.auth')
-
 @section('content')
-
+@extends('layouts.auth')
 <style>
     .container-fluid {
         display: flex;
@@ -11,11 +9,13 @@
 
     .kiri {
         width: 15rem;
-  
+        padding-left:30px;
+        padding-top:5px;
+       
     }
 
     .tengah {
-        padding-top: 4rem;
+       padding-top:4rem;
         padding-left: 5rem;
         padding-right: 5rem;
         flex-grow: 1;
@@ -27,10 +27,11 @@
         text-align: center;
         justify-content: center;
         align-items: center;
+        
     }
 
     .user-details {
-        margin-top: 3px;
+        margin-top: 50px;
     }
 
     .logo {
@@ -74,7 +75,7 @@ text-align: left;
     }
 
     .avatar {
-        padding-top: 100px;
+        padding-top: 50px;
     }
 
     .avatar-input {
@@ -97,7 +98,9 @@ text-align: left;
         font-size: 24px;
         font-style: normal;
         color: #fff;
-        border-radius: 40px;
+        border-radius: 30px;
+        margin-left:220px;
+        margin-top:30px;
     }
 
     a {
@@ -106,6 +109,10 @@ text-align: left;
 
     a:hover {
         color: blue;
+        text-decoration: none;
+    }
+    h2{
+        
     }
 </style>
 
@@ -114,12 +121,12 @@ text-align: left;
         @csrf
         <div class="container-fluid">
             <div class="kiri">
-                <img class="logo" src="{{ asset('img/logo.png') }}" alt="" />
+            <h1><b><a class="" href="" style="font-size: 20px;">{{ __('< Kembali ke Profil') }}</a></b></h1>
             </div>
 
             <div class="tengah">
                 <div class="row-title">
-                    <h1>Daftar Akun</h1>
+                    <h1><b>Sunting Profil</b></h1>
                 </div>
 
                 <!-- Validation Errors -->
@@ -149,21 +156,13 @@ text-align: left;
                         <input id="email" class="notname-input" type="email" placeholder="Email" name="email" :value="old('email')" required />
                     </div>
 
-                    <!-- Password -->
-                    <div class="pb-4">
-                        <input id="password" class="notname-input" type="password" placeholder="Password" name="password" required autocomplete="new-password" />
-                    </div>
-
-                    <!-- Confirm Password -->
-                    <div class="pb-4">
-                        <input id="password_confirmation" class="notname-input" type="password" placeholder="Konfirmasi Password" name="password_confirmation" required />
-                    </div>
-
                     <!-- No-HP -->
                     <div class="pb-4">
                         <input class="notname-input" type="text" placeholder="No. Handphone" />
                     </div>
-
+                    <div class="mb-3">
+                        <button class="btn-daftar">{{ __('Simpan') }}</button>
+                    </div>
                 </div>
             </div>
 
@@ -173,21 +172,15 @@ text-align: left;
                     <div class="avatar-input mb-3">
                         <div class="form-file-group" style="width: 191px; height: 177px; border-radius: 50%">
                             <input type="file" style="display: none" id="avatar" name="avatar" onchange="preview(this)" />
-                            <img class="avatar-daftar" src="{{ asset('img/avatar-daftar.png') }}" onclick="document.querySelector('#avatar').click()" />
+                            <img class="avatar-daftar" src="{{ asset('img/profilAvatar.png') }}" onclick="document.querySelector('#avatar').click()" />
                         </div>
                         <div class="" id="previewBox" style="display: none">
                             <img src="" id="previewImg" style="width: 191px; height: 177px; border-radius: 50%" onclick="document.querySelector('#avatar').click()" />
                         </div>
                     </div>
-
-                    <div class="mb-3">
-                        <button class="btn-daftar">{{ __('Daftar') }}</button>
-                    </div>
-
-                    <!-- If already registered -->
-                    <div class="login">
-                        <a class="" href="/login" style="font-size: 20px;">{{ __('Sudah daftar?') }}</a>
-                    </div>
+                    <div class="gantiprofil">
+                    <h3><b>Ganti Foto Profil</b></h3>
+                </div>
                 </div>
             </div>
         </div>

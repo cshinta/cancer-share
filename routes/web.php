@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Auth\PasswordResetLinkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,17 +25,23 @@ Route::get('/login', function () {
     return view('auth.login');
 });
 
+Route::post('/login', 'AuthenticatedSessionController@store');
+
 Route::get('/forgot-password', function () {
     return view('auth.lupapassword');
 });
 
-Route::post('/login', 'AuthenticatedSessionController@store');
+Route::post('/forgot-password', [PasswordResetLinkController::class, 'store']);
 
 Route::get('/dashboard', function () {
     return view('profile.dashboard');
 });
 
-// Route::get('/send-email',[MailController::class,'basic_email']);
+Route::get('/send-email',[MailController::class,'basic_email']);
+
+// Route::get('/mail', function () {
+//     return view('page.mail');
+// });
 
 Route::get('/forum', function () {
     return view('forum.index');
@@ -50,6 +58,10 @@ Route::get('/change-password', function () {
 Route::get('/register', function () {
     return view('auth.register');
 });
+
+Route::post('/register', 'RegisteredUserController@store');
+
+
 Route::get('/sunting-profil', function () {
     return view('auth.suntingprofil');
 });

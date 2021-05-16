@@ -137,8 +137,10 @@
           </div>
           <h2>Lupa Kata Sandi?</h2>
           <h3>Masukkan alamat email atau no. Handphone yang sebelumnya<br> telah terdaftar pada akun.<br></h3>
+          <x-auth-validation-errors class="mb-4" :errors="$errors" />
           <div class="form">
-              <form action="" method="POST">
+              <form action="{{ url('/forgot-password') }}" method="POST">
+                  @csrf
                   <input type="text" placeholder="alamat email atau no. Handphone" name="pulihan" required>
                   <div>
                       <button type="submit">Kirim Link Pulihan</button>

@@ -24,7 +24,7 @@ class UpdatePasswordRequest extends FormRequest
     public function rules()
     {
         return [
-            'password' => 'required|string|confirmed|min:8'
+            'passwordbaru' => 'required|string|confirmed|min:8'
         ];
     }
 }

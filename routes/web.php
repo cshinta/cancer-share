@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,8 +38,6 @@ Route::get('/dashboard', function () {
     return view('profile.dashboard');
 });
 
-Route::get('/send-email',[MailController::class,'basic_email']);
-
 // Route::get('/mail', function () {
 //     return view('page.mail');
 // });
@@ -51,20 +50,20 @@ Route::get('/reset-password', function () {
     return view('auth.resetpassword');
 });
 
-Route::get('/change-password', function () {
-    return view('auth.ubahpassword');
-});
+Route::get('/change-password',  [ProfileController::class,'getDataPassword']);
+
+Route::post('/change-password',  [ProfileController::class,'updatePassword']);
 
 Route::get('/register', function () {
     return view('auth.register');
 });
 
-Route::post('/register', 'RegisteredUserController@store');
+Route::post('/register', [RegisteredUserController::class,'store']);
 
 
-Route::get('/sunting-profil', function () {
-    return view('auth.suntingprofil');
-});
+Route::get('/sunting-profil', [ProfileController::class,'getDataProfile']);
+
+Route::post('/sunting-profil', [ProfileController::class,'update']);
 
 Route::get('/lihat-profil', function () {
     return view('profile.lihatprofil');

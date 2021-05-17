@@ -1,9 +1,9 @@
 @extends('layouts.auth')
 
 @section('content')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <title>dashboard profile</title>
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Signika:wght@700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
     nav li {
         display: inline;
@@ -20,44 +20,7 @@
         color : #FFFFFF;
         text-align: center;
         top:3px;
-    }  
-    .footer{
-        background: #033D68;
-        text-align: center;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        position: absolute;
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: 900;
-        font-size: 18px;
-        line-height: 21px;
-        color: #FFFFFF;
-    }
-    .selamatdatang{
-        position: absolute;
-        width: 582px;
-        height: 37px;
-        left: 500px;
-        top: 360px;
-        font-family: Signika;
-        font-style: normal;
-        font-weight: bold;
-        font-size:35px;
-    }
-    .silahkan{
-        position: absolute;
-        width: 582px;
-        height: 37px;
-        left: 430px;
-        top: 400px;
-
-        font-family: Signika;
-        font-style: normal;
-        font-size: 30px;
-    }
+    } 
     .rectangle{
         position: absolute;
         width: 1070px;
@@ -65,6 +28,7 @@
         left: 185px;
         right: 185px;
         top: 480px;
+        margin : auto;
 
         background: #FFFFFF;
         border: 5px solid #033D68;
@@ -85,6 +49,7 @@
         font-weight: bold;
         font-size:18px;
         line-height:45px;
+        color: #FFFFFF;
         text-align:center;
     }
     .logo{
@@ -98,24 +63,33 @@
     img.avatar{
         width:12%
     }
+    h2 {
+        text-align: center;
+        font-family: 'Signika';
+        font-size: 27px;
+        font-weight:bold;
+        margin: 0%;
+    }
+    h3 {
+        text-align: center;
+        font-family: 'Signika';
+        font-size: 15px;
+        color: #737373;
+        margin: 0%;
+    }
     </style>
     <main >
         <div class="Logo">
          <img src="{{ asset('img/logo.png') }}" class="logo" weight=120 height=190>
         </div>
         <div class="fotoorang">
-          <img src="{{ asset('img/avatar.png') }}" class="avatar">
+          <img src="{{ asset('img/profilAvatar.png') }}" class="avatar">
         </div>
         <div class="editprofil">
-          <a href="">Lihat Profil</a>
+            <a href="" >Lihat Profil</a>
         </div>
-        <div class="selamatdatang">
-          <p>Selamat Datang ,Arief!</p>
-         </div>
-        </div>
-        <div class="silahkan">
-            <p>Silahkan pilih halaman yang ingin dikunjungi : </P>
-        </div>
+        <h2>Selamat Datang,Arief!</h2>
+        <h3>Silahkan pilih halaman yang ingin dikunjungi :</h3>
         <div class="rectangle">
             <nav>
               <ul>

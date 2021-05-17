@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Password;
 use App\Mail\PasswordMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Contracts\Auth\PasswordBroker as PasswordBrokerContract;
 
 class PasswordResetLinkController extends Controller
 {
@@ -26,12 +26,10 @@ class PasswordResetLinkController extends Controller
             'pulihan' => 'required|email',
         ]);
         
-        $status = Password::sendResetLink(
-            $request->only('email')
-        );
+        $user = Password::getUser($request->only('email'));
 
-        if ($status != Password::RESET_LINK_SENT) {
-            return back()->withInput($request->only('email'))->withErrors(['email' => __($status)]);
+        if (is_null($user)) {
+            return back()->withInput($request->only('email'))->withErrors(['email' => __('passwords.user')]);
         }
 
         try{

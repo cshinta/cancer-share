@@ -13,10 +13,10 @@ return [
     |
     */
 
-    'reset' => 'Your password has been reset!',
-    'sent' => 'We have emailed your password reset link!',
-    'throttled' => 'Please wait before retrying.',
-    'token' => 'This password reset token is invalid.',
-    'user' => "We can't find a user with that email address.",
+    'reset' => 'Kata sandi anda telah diubah!',
+    'sent' => 'Kami telah mengirim tautan ke email Anda untuk mengubah kata sandi akun Anda!',
+    'throttled' => 'Mohon tunggu sebelum mencoba lagi.',
+    'token' => 'Token untuk mengubah kata sandi tidak valid.',
+    'user' => "Email yang Anda masukkan bukan milik akun tertentu.",
 
 ];

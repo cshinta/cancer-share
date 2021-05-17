@@ -138,29 +138,29 @@ text-align: left;
                     <div class="row pb-4">
                         <!-- First Name -->
                         <div class="col-6 name-box">
-                            <input id="firstname" class="name-input" type="text" placeholder="Nama Depan" name="firstname" value={{ $user['firstname'] }} required autofocus />
+                            <input id="firstname" class="name-input" type="text" placeholder="Nama Depan" name="firstname" value={{ $user->firstname }} required autofocus />
                         </div>
 
                         <!-- Last Name -->
                         <div class="col-6 name-box">
-                            <input id="lastname" class="name-input" type="text" placeholder="Nama Belakang" name="lastname" value={{ $user['lastname'] }} required />
+                            <input id="lastname" class="name-input" type="text" placeholder="Nama Belakang" name="lastname" value={{ $user->lastname }} required />
                         </div>
                     </div>
 
 
                     <!-- Userame -->
                     <div class="pb-4">
-                        <input id="username" class="notname-input" type="text" placeholder="Username" name="username" value={{ $user['username'] }} required />
+                        <input id="username" class="notname-input" type="text" placeholder="Username" name="username" value={{ $user->username }} required />
                     </div>
 
                     <!-- Email Address -->
                     <div class="pb-4">
-                        <input id="email" class="notname-input" type="email" placeholder="Email" name="email" value={{ $user['email'] }} required />
+                        <input id="email" class="notname-input" type="email" placeholder="Email" name="email" value={{ $user->email }} required />
                     </div>
 
                     <!-- No-HP -->
                     <div class="pb-4">
-                        <input class="notname-input" type="text" placeholder="No. Handphone" name="phone" value={{ $user['phone'] }}/>
+                        <input class="notname-input" type="text" placeholder="No. Handphone" name="phone" value={{ $user->phone }}/>
                     </div>
                     <div class="btn-daftar-loc">
                         <button class="btn-daftar">{{ __('Simpan') }}</button>
@@ -174,7 +174,7 @@ text-align: left;
                     <div class="avatar-input mb-3">
                         <div class="form-file-group" style="width: 191px; height: 177px; border-radius: 50%">
                             <input type="file" style="display: none" id="avatar" name="avatar" onchange="preview(this)" />
-                            <img class="avatar-daftar" src="{{ asset($user['photo']) }}" onclick="document.querySelector('#avatar').click()" />
+                            <img class="avatar-daftar" src="{{ asset('storage/' . $user->avatar) }}" onclick="document.querySelector('#avatar').click()" />
                         </div>
                         <div class="" id="previewBox" style="display: none">
                             <img src="" id="previewImg" style="width: 191px; height: 177px; border-radius: 50%" onclick="document.querySelector('#avatar').click()" />

@@ -88,11 +88,11 @@
                 @csrf
                   <div class="input-container">
                       <i class="fa fa-user icon"></i>
-                      <input class="input-field" type="text" placeholder="Username" name="usrnm">
+                      <input class="input-field" type="text" placeholder="Username" name="username">
                   </div>
                   <div class="input-container">
                       <i class="fa fa-lock icon"></i>
-                      <input class="input-field" type="password" placeholder="Password" name="psw">
+                      <input class="input-field" type="password" placeholder="Password" name="password">
                   </div>
                   <button type="submit" class="btn">Masuk</button>
               </form>

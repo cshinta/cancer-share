@@ -48,6 +48,7 @@ class RegisteredUserController extends Controller
             $image = $request->file('avatar');
             $imageName = $request['username'];  
             $avatarPath = $image->storeAs('public/avatars/', $imageName.'.jpeg');
+            $avatarPathDB= substr($avatarPath, 6);
         }
         
         $user = User::create([
@@ -56,7 +57,7 @@ class RegisteredUserController extends Controller
             'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'avatar' => $avatarPath,
+            'avatar' => $avatarPathDB,
             'phone' => $request->phone,
         ]);
 

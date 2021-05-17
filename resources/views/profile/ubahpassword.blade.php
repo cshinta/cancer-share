@@ -38,7 +38,8 @@
         }
 
         img.profil {
-            width: 15%;
+            width: 30%;
+            border-radius:50%;
             height: auto;
             text-align: center;
             margin: 10% 0 5px 0px;
@@ -82,13 +83,13 @@
                 <img src="{{ asset('img/logo.png') }}" class="avatar">
             </div>
             <div class="columnright">
-                <img src="{{ asset($user['photo']) }}" class="profil">
+                <img src="{{ asset('storage' . $user->avatar) }}" class="profil">
                 <h2><b>{{ $user['name'] }}<b></h2>
                 <form action="{{ url('/change-password') }}" method="POST">
                     @csrf
-                    <input type="password" placeholder="Kata Sandi Lama" name="passwordlama" required>
+                    <input type="password" placeholder="Kata Sandi Lama" name="password" required>
                     <div>
-                        <input type="password" placeholder="Kata Sandi Baru" name="passwordbaru" required>
+                        <input type="password" placeholder="Kata Sandi Baru" name="password_confirmation" required>
                     </div>
                     <div>
                         <button type="submit">Ubah Kata Sandi</button>

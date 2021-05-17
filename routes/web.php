@@ -2,10 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\MailController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Auth\NewPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ Route::get('/login', function () {
     return view('auth.login');
 });
 
-Route::post('/login', 'AuthenticatedSessionController@store');
+Route::post('/login', [AuthenticatedSessionController::class, 'store']);
 
 Route::get('/forgot-password', function () {
     return view('auth.lupapassword');
@@ -34,9 +34,7 @@ Route::get('/forgot-password', function () {
 
 Route::post('/forgot-password', [PasswordResetLinkController::class, 'store']);
 
-Route::get('/dashboard', function () {
-    return view('profile.dashboard');
-});
+Route::get('/dashboard', [ProfileController::class,'getDashboard']);
 
 // Route::get('/mail', function () {
 //     return view('page.mail');
@@ -49,6 +47,8 @@ Route::get('/forum', function () {
 Route::get('/reset-password', function () {
     return view('auth.resetpassword');
 });
+
+Route::post('/reset-password',  [NewPasswordController::class,'store']);
 
 Route::get('/change-password',  [ProfileController::class,'getDataPassword']);
 
@@ -68,5 +68,7 @@ Route::post('/sunting-profil', [ProfileController::class,'update']);
 Route::get('/lihat-profil', function () {
     return view('profile.lihatprofil');
 });
+
+Route::get('/logout', [AuthenticatedSessionController::class, 'destroy']);
 
 require __DIR__ . '/auth.php';

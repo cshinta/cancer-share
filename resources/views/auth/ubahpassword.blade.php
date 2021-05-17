@@ -2,52 +2,48 @@
 @section('content')
 
 <style>
-
-
-.column {
-  float: left;
-  
-  height: 80%; /* Should be removed. Only for demonstration */
+.row{
+  display: flex;
+  margin: 0;
+  padding: 0 3rem 0 0;
 }
 
-.left {
+.columnleft {
   width: 25%;
   padding: 10px;
 }
 
-.right {
+.columnright {
   width: 75%;
-  margin-right:0;
+  padding-left:30px;
 }
+
+
 h2{
-    margin-left: 28%;
+    margin-left: 36%;
     font-family:'Signika';
-    margin-top: 5px;
+    margin-top: 10px;
 font-size: 23px;
 font-style: bold;
 }
 /* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+
 
 img.avatar {
-  width: 40%;
+  width: 30%;
   text-align: left;
   margin:0%;
 }
 img.profil {
-  width: 17%;
+  width: 25%;
   text-align: center;
-  margin: 80px 0 5px 240px;
+  margin: 80px 0 5px 190px;
 }
 input[type=password]{
-  width: 45%;
+  width: 70%;
   height: 50px;
   padding: 12px 20px;
-  margin: 10px 0 10px 11%;
+  margin: 10px 0 10px 10%;
   display: inline-block;
   border: 1px solid #9B9B9B;;
   box-sizing: border-box;
@@ -57,10 +53,10 @@ font-family: 'Signika';
 font-size: medium;
 }
 button[type=Submit]{
-width: 45%;
+width: 70%;
 height: 48px;
 padding: 12px 20px;
-margin: 10px 0 10px 11%;
+margin: 10px 0 10px 10%;
 background: #033D68;
 border: 1px solid #9B9B9B;
 box-sizing: border-box;
@@ -81,7 +77,7 @@ font-size: medium;
       </div>
       <div class="column right">
         <img src="{{ asset('img/profilAvatar.png') }}" class="profil">
-        <h2>Arief Dava</h2>
+        <h2><b>Arief Dava<b></h2>
         <form action="###" method="POST">
         @csrf
             <input type="password" placeholder="Kata Sandi Lama" name="passwordlama" required>

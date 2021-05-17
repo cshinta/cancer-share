@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use App\Mail\PasswordMail;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
+
 
 class PasswordResetLinkController extends Controller
 {
@@ -23,6 +25,14 @@ class PasswordResetLinkController extends Controller
         $request->validate([
             'pulihan' => 'required|email',
         ]);
+        
+        $status = Password::sendResetLink(
+            $request->only('email')
+        );
+
+        if ($status != Password::RESET_LINK_SENT) {
+            return back()->withInput($request->only('email'))->withErrors(['email' => __($status)]);
+        }
 
         try{
             $details =
@@ -36,8 +46,6 @@ class PasswordResetLinkController extends Controller
         catch(\Exception $e){
             $status=false;
         }
-
-        
 
         return back();
     }

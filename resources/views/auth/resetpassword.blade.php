@@ -3,32 +3,30 @@
 
 <style>
 
-.column {
-  float: left;
-  height: 80%; /* Should be removed. Only for demonstration */
+.row{
+  display: flex;
+  margin: 0;
+  padding: 0 3rem 0 0;
 }
 
-.left {
+.columnleft {
   width: 25%;
   padding: 10px;
 }
 
-.right {
+.columnright {
   width: 75%;
+  padding-left:40px;
 }
 h2{
-    margin-left: 27%;
+    margin-left: 28%;
     font-family:"Signika";
-    margin-top: 5px;
+    margin-top: 10px;
 font-size: 23px;
 font-style: bold;
 }
 /* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+
 
 img.avatar {
   width: 40%;
@@ -38,10 +36,10 @@ img.avatar {
 img.profil {
   width: 17%;
   text-align: center;
-  margin: 80px 0 5px 230px;
+  margin: 80px 0 5px 220px;
 }
 input[type=password]{
-  width: 45%;
+  width: 47%;
   height: 50px;
   padding: 12px;
   margin: 10px 0 10px 10%;
@@ -55,7 +53,7 @@ font-size: medium;
 }
 
 button[type=Submit]{
-width: 45%;
+width: 47%;
 height: 48px;
 padding: 12px;
 margin: 10px 0 10px 10%;
@@ -73,12 +71,12 @@ font-size: medium;
 <main>
 
     <div class="row">
-      <div class="column left"> 
+      <div class="columnleft"> 
             <img src="{{ asset('img/logo.png') }}" class="avatar"> 
       </div>
-      <div class="column right">
+      <div class="columnright">
         <img src="{{ asset('img/profilAvatar.png') }}" class="profil">
-        <h2>Arief Dava</h2>
+        <h2><b>Arief Dava<b></h2>
         <form action="###" method="POST">
         @csrf
             <input type="password" placeholder="Kata Sandi Baru" name="passwordbaru" required>

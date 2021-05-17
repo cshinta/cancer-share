@@ -121,7 +121,7 @@ text-align: left;
         @csrf
         <div class="container-fluid">
             <div class="kiri">
-            <h1><b><a class="" href="" style="font-size: 20px;">{{ __('< Kembali ke Profil') }}</a></b></h1>
+            <h1><b><a class="" href="/lihat-profil" style="font-size: 20px;">{{ __('< Kembali ke Profil') }}</a></b></h1>
             </div>
 
             <div class="tengah">

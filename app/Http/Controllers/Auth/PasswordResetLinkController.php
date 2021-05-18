@@ -23,7 +23,7 @@ class PasswordResetLinkController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'pulihan' => 'required|email',
+            'email' => 'required|email',
         ]);
         
         $user = Password::getUser($request->only('email'));
@@ -38,7 +38,7 @@ class PasswordResetLinkController extends Controller
                     'nama' => $request->user()->firstname,
                 ];
 
-            Mail::to($request->pulihan)->send(new PasswordMail($details));
+            Mail::to($request->email)->send(new PasswordMail($details));
             $status=true;
         }
         catch(\Exception $e){

@@ -69,6 +69,9 @@ Route::get('/lihat-profil', function () {
     return view('profile.lihatprofil');
 });
 
+Route::get('/baca-selengkapnya', function () {
+    return view('forum.bacaselengkapnya');
+});
 Route::get('/logout', [AuthenticatedSessionController::class, 'destroy']);
 
 require __DIR__ . '/auth.php';

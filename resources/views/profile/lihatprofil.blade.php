@@ -25,10 +25,10 @@ width: 10%;
 
     .kiri {
         width:50%;
-  padding: 40px;
-  margin-top:30px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-  height: 400px; }
+        padding: 40px;
+        margin-top:30px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+        height: 400px; }
 
     .tengah {
         width:100%;

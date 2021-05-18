@@ -44,6 +44,10 @@ Route::get('/forum', function () {
     return view('forum.index');
 });
 
+Route::get('/donasi', function () {
+    return view('page.donasi');
+});
+
 Route::get('/reset-password', function () {
     return view('auth.resetpassword');
 });

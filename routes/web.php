@@ -48,9 +48,7 @@ Route::get('/donasi', function () {
     return view('page.donasi');
 });
 
-Route::get('/reset-password', function () {
-    return view('auth.resetpassword');
-});
+Route::get('/reset-password', [NewPasswordController::class,'getDataUser']);
 
 Route::post('/reset-password',  [NewPasswordController::class,'store']);
 

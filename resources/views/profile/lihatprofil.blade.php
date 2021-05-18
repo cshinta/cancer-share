@@ -24,11 +24,13 @@ width: 10%;
     }
 
     .kiri {
-        width:50%;
+        width: 45%;
         padding: 40px;
-        margin-top:30px;
+        margin-top:50px;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-        height: 400px; }
+        height: 400px;
+        margin-left:30px;
+    }
 
     .tengah {
         width:100%;

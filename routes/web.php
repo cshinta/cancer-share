@@ -43,6 +43,10 @@ Route::get('/dashboard', [ProfileController::class,'getDashboard']);
 Route::get('/forum', function () {
     return view('forum.index');
 });
+Route::get('/donasi', function () {
+    return view('page.donasi');
+});
+Route::get('/reset-password', [NewPasswordController::class,'getDataUser']);
 
 Route::get('/reset-password', [NewPasswordController::class,'getDataUser']);
 

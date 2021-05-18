@@ -10,86 +10,90 @@
     margin-bottom:5px;
 }
 .onklik{
-background: #033D68;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-border-radius: 15px;
-height: 40px;
-color: #FFFFFF;
-width: 10%;
+    background: #033D68;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    height: 40px;
+    color: #FFFFFF;
+    width: 10%;
 }
 .container-fluid {
-        display: flex;
-        margin: 0;
-        padding: 0 3rem 0 0;
+    display: flex;
+    margin: 0;
+    padding: 0 3rem 0 0;
     }
 
-    .kiri {
-        width:50%;
-  padding: 40px;
-  margin-top:30px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-  height: 400px; }
+.kiri {
+    width:45%;
+    padding: 40px;
+    margin-top:50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    height: 400px;
+    margin-left:30px;
+ }
 
-    .tengah {
-        width:100%;
-        padding-top: 30px;
-        height: 400px;
+.tengah {
+    width:93%;
+    padding-top: 30px;
+    margin-left:50px;
+    margin-top:50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
     }
 
-    .datadiri {
-        display: flex;
-        margin: 0;
-        padding: 0 5px 0 0;
+.datadiri {
+    display: flex;
+    margin: 0;
+    padding: 0 5px 0 0;
     }
-    .datakanan{
-        padding-left: 20px;
+.datakanan{
+    padding-left: 20px;
     }
-    .datakiri{
-        color:#8F8F8F;
+.datakiri{
+    color:#8F8F8F;
     }
-    .tombol{
-        background: #033D68;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-        border-radius: 15px;
-        height: 50px;
-        color: #FFFFFF;
-        width: 30%; 
-        margin-left:170px;
+.tombol{
+    background: #033D68;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    height: 50px;
+    color: #FFFFFF;
+    width: 30%; 
+    margin-left:170px;
     }
-    .tombolubah{
+.tombolubah{
     
-       padding-top:20px;
+    padding-top:20px;
     }
     
-    .Logout{
-        margin-left:215px;
-        margin-top:20px;
+.Logout{
+    margin-left:205px;
+    margin-top:20px;
 
     }
 a:hover {
-  text-decoration: none;
-  color:blue;
+    text-decoration: none;
+    color:blue;
 }
-    a:link {
- color:black;
-  text-decoration: underline;
+a:link {
+    color:black;
+    text-decoration: underline;
 }
 a:visited {
-  color:black;
+    color:black;
 }
 .judul{
-margin-left:60px;
+    margin-left:60px;
 }
 .profilkecil{
     width: 45px;
 }
 .rowprofil{
     display: flex;
-        margin-top: 30px;
-        padding: 0 5px 0 0;
+    margin-top: 30px;
+    padding: 0 5px 0 0;
 }
 .profilkecilkiri{
-margin-left:60px;
+    margin-left:60px;
 }
 .profilketerangan{
     margin-left:20px;
@@ -97,8 +101,8 @@ margin-left:60px;
 }
 .tulisan{
     display: flex;
-        margin-top: 1px;
-        padding: 0 5px 0 0;
+    margin-top: 1px;
+    padding: 0 5px 0 0;
 }
 .namakategori{
     margin-left:3px;
@@ -109,17 +113,20 @@ margin-left:60px;
     margin-top:20px;
 }
 .selengkapnya{
-        background: #033D68;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-        border-radius: 15px;
-        height: 45px;
-        color: #FFFFFF;
-        width: 40%; 
-        margin-left:250px;
+    background: #033D68;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    height: 45px;
+    color: #FFFFFF;
+    width: 40%; 
+    margin-left:250px;
     }
 .tombolselengkapnya{
     margin-top:15px;
+    margin-bottom:15px;
 }
+
+
 </style>
 <main>
     <div class="atas">
@@ -127,90 +134,70 @@ margin-left:60px;
         <h4><b>Arief Dava<b></h4>
         <button onclick="window.location.href='/sunting-profil'" class="onklik">Sunting Profil</button>
     </div>
-    <div class="container-fluid">
-            <div class="kiri">
-            <h4><b>Data Diri<b></h4>
-            <div class="datadiri">
+<div class="container-fluid">
+    <div class="kiri">
+        <h4><b>Data Diri<b></h4>
+        <div class="datadiri">
                 <div class="datakiri">
                 <h5>Nama Depan</h5>
                 <h5>Nama Belakang</h5>
                 <h5>Username</h5>
                 <h5>Email</h5>
                 <h5>No. Handphone</h5>
-                </div>
-                <div class="datakanan">
+            </div>
+            <div class="datakanan">
                 <h5>Arief</h5>
                 <h5>Dava</h5>
                 <h5>arief77</h5>
                 <h5>ariefdava77@gmail.com</h5>
                 <h5>08123456789</h5>
-                </div>
             </div>
+        </div>
             <div class="tombolubah">
-            <button onclick="window.location.href='/change-password'" class="tombol" >Ubah Kata Sandi</button>
+                <button onclick="window.location.href='/change-password'" class="tombol" >Ubah Kata Sandi</button>
             <div>
             <h4 class="logout"><b><a href="/login">Logout</a><b></h4>
             </div>
-            </div>           
-            </div>
-            <div class="tengah">
-            <div class="title"> 
-            <h2 class="judul"><b>Kisah Anda<b></h2>
-            </div>
-            <div class="rowprofil">
-            <div class="profilkecilkiri">
-            <img src="{{ asset('img/profilAvatar.png') }}" class="profilkecil">
-            </div>
-            <div class="profilketerangan"> 
-            <div class="tulisan">
-            <div class="namaprofil">
-            <h6><b>Arief Dava <b></h6>
-            </div>
-            <div class="namakategori">
-            <h6>  Kanker Paru-Paru</h6>
-            </div></div>
-            <div class="konten">
-            <h4><b>Kisah Saya Melawan Kanker <br>Paru-Paru 3 Tahun Lamanya</br><b></h4>
-            <h6>Saya pernah menderita kanker paru-paru selama kurang lebih 3 tahun.<br> 
-            Namun, Saya berhasil dinyatakan sembuh total dari penyakit Saya<br> berkat kerja keras 
-            dan pengobatan yang Saya jalani secara rutin <br>di Rumah Sakit Kanker Dharmais.
-            Pihak rumah sakit juga ramah dan<br> sabar dalam menangani pasiennya
-            sehingga Saya sebagai pasien<br> pun nyaman dan senang menjalani perawatan.
-            Kalau ditanya, <br>pernah ga sih ngerasa putus asa dan ingin<br> menyerah saja?
-            Jawabannya, pasti pernah. Lalu, bagaimana cara<br> Saya bangun dari keputus-asaan tersebut?
-            Banyak hal yang<br> Saya alami sekaligus pelajari saat masih menjadi pejuang kanker .....<br></h6>
-            </div>
-            <div class="tombolselengkapnya"><button onclick="window.location.href='#'" class="selengkapnya" >Baca Selengkapnya</button></div>
-            </div>
-            </div>
-            <div class="tengah">
-            <div class="rowprofil">
-            <div class="profilkecilkiri">
-            <img src="{{ asset('img/profilAvatar.png') }}" class="profilkecil">
-            </div>
-            <div class="profilketerangan"> 
-            <div class="tulisan">
-            <div class="namaprofil">
-            <h6><b>Arief Dava <b></h6>
-            </div>
-            <div class="namakategori">
-            <h6>  Kanker Paru-Paru</h6>
-            </div></div>
-            <div class="konten">
-            <h4><b>Kisah Saya Melawan Kanker <br>Paru-Paru 3 Tahun Lamanya</br><b></h4>
-            <h6>Saya pernah menderita kanker paru-paru selama kurang lebih 3 tahun.<br> 
-            Namun, Saya berhasil dinyatakan sembuh total dari penyakit Saya<br> berkat kerja keras 
-            dan pengobatan yang Saya jalani secara rutin <br>di Rumah Sakit Kanker Dharmais.
-            Pihak rumah sakit juga ramah dan<br> sabar dalam menangani pasiennya
-            sehingga Saya sebagai pasien<br> pun nyaman dan senang menjalani perawatan.
-            Kalau ditanya, <br>pernah ga sih ngerasa putus asa dan ingin<br> menyerah saja?
-            Jawabannya, pasti pernah. Lalu, bagaimana cara<br> Saya bangun dari keputus-asaan tersebut?
-            Banyak hal yang<br> Saya alami sekaligus pelajari saat masih menjadi pejuang kanker .....<br></h6>
-            </div>
-            <div class="tombolselengkapnya"><button onclick="window.location.href='#'" class="selengkapnya" >Baca Selengkapnya</button></div>
-            </div>
-            </div>
-                
-                
+        </div>           
+    </div>
 
+
+    <div class="tengah">
+
+        <div class="title"> 
+             <h2 class="judul"><b>Kisah Anda<b></h2>
+        </div>
+
+            <div class="rowprofil">
+                    <div class="profilkecilkiri">
+                    <img src="{{ asset('img/profilAvatar.png') }}" class="profilkecil">
+                    </div>
+                <div class="profilketerangan"> 
+                    <div class="tulisan">
+                        <div class="namaprofil">
+                        <h6><b>Arief Dava <b></h6>
+                        </div>
+                        <div class="namakategori">
+                        <h6>  Kanker Paru-Paru</h6>
+                        </div>
+                    </div>
+
+                <div class="konten">
+            <h4><b>Kisah Saya Melawan Kanker <br>Paru-Paru 3 Tahun Lamanya</br><b></h4>
+            <h6 style="font-size: 15px;">Saya pernah menderita kanker paru-paru selama kurang lebih 3 tahun.<br> 
+            Namun, Saya berhasil dinyatakan sembuh total dari penyakit Saya<br> 
+            berkat kerja keras dan pengobatan yang Saya jalani secara rutin <br>
+            di Rumah Sakit Kanker Dharmais. Pihak rumah sakit juga ramah dan<br> 
+            sabar dalam menangani pasiennya sehingga Saya sebagai pasien<br> 
+            pun nyaman dan senang menjalani perawatan.Kalau ditanya, <br>
+            pernah ga sih ngerasa putus asa dan ingin<br> 
+            menyerah saja?Jawabannya, pasti pernah. Lalu, bagaimana cara<br> 
+            Saya bangun dari keputus-asaan tersebut? Banyak hal yang<br> 
+            Saya alami sekaligus pelajari saat masih menjadi pejuang kanker .....<br></h6>
+                </div>
+                <div class="tombolselengkapnya"><button onclick="window.location.href='#'" class="selengkapnya" >Baca Selengkapnya</button></div>
+                </div>
+    </div>  
+
+</div>
 </main>

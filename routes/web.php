@@ -70,4 +70,8 @@ Route::get('/lihat-profil', function () {
     return view('profile.lihatprofil');
 });
 
+Route::get('/baca-selengkapnya', function () {
+    return view('forum.bacaselengkapnya');
+});
+
 require __DIR__ . '/auth.php';

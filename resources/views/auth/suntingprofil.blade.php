@@ -117,7 +117,7 @@ text-align: left;
 </style>
 
 <main>
-    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+    <form method="POST" action="" enctype="multipart/form-data">
         @csrf
         <div class="container-fluid">
             <div class="kiri">

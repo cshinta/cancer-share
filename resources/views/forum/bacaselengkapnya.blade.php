@@ -1,96 +1,110 @@
 @section('content')
-@extends('layouts.auth')
-<style>
-.backprofil {
-        
-        padding-left:50px;
-        padding-top:30px;
-    }
-    a {
-        color: black;
-    }
+    @extends('layouts.app')
+    <style>
+        .backprofil {
 
-    a:hover {
-        color: blue;
-        text-decoration: none;
-    }
-    a:visited {
-  color:black;
-  text-decoration: none;
-}
-.ketprofil{
-    display: flex;
-        margin-top: 80;
-        margin-left:60px;
-        padding: 0 3rem 0 0;
-}
-.profilkecil{
-    width: 59px;
-}
-.namaprofil{
-    margin-left:10px;
-    margin-top:5px;
-}
-.title{
-    margin-left:127px;
-    margin-top:30px;
-}
-.gambarvideo{
-    width: 30%;
-    margin-left:500px;
-}
-.ketcerita{
-    margin-left:127px;
-    margin-top:30px;
-    display: -webkit-box;
-    -webkit-line-clamp: 15;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-   
-}
+            padding-left: 50px;
+            padding-top: 20px;
+        }
 
-</style>
+        a {
+            color: black;
+        }
 
-<main>
+        a:hover {
+            color: blue;
+            text-decoration: none;
+        }
 
-<div class="backprofil">
-    <h1><b><a class="" href="/lihat-profil" style="font-size: 24px;">{{ __('< Kembali ke Profil') }}</a></b></h1>
-    </div>
+        a:visited {
+            color: black;
+            text-decoration: none;
+        }
 
-<div class="ketprofil">
-    <div class=potoprofil>
-    <img src="{{ asset('img/profilAvatar.png') }}" class="profilkecil">
-    </div>
+        .ketprofil {
+            display: flex;
+            margin-top: 80;
+            margin-left: 60px;
+            padding: 0 3rem 0 0;
+        }
 
-    <div class="namaprofil">
-    <h6 style="font-size: 24px;"><b>Arief Dava <b></h6>
-    <h6 style="margin:0;">Kanker Paru-Paru</h6>
-    </div>
-</div>
+        .profilkecil {
+            width: 59px;
+        }
 
-<div class="title">
-    <h6 style="font-size: 24px;"><b>Kisah Saya Melawan Kanker Paru-Paru 3 Tahun Lamanya<b></h6>
-    </div>
+        .namaprofil {
+            margin: 1% 0 0 1%;
+        }
 
-<img src="{{ asset('img/gambarvideo.png') }}" class="gambarvideo">
+        .potoprofil{
+            margin: 1% 0 0 0;
+        }
 
-<div class="ketcerita">
-<h6 style="font-size: 17px;">Saya pernah menderita kanker paru-paru selama kurang lebih 3 tahun. Namun, Saya berhasil dinyatakan sembuh total dari penyakit Saya berkat kerja
-keras dan pengobatan yang Saya jalani secara rutin di Rumah Sakit Kanker Dharmais. Pihak rumah sakit juga ramah dan sabar dalam menangani pasiennya
-sehingga Saya sebagai pasien pun nyaman dan senang menjalani perawatan. Kalau ditanya, pernah ga sih ngerasa putus asa dan ingin menyerah saja? 
-Jawabannya, pasti pernah. Lalu, bagaimana cara Saya bangun dari keputus-asaan tersebut? Banyak hal yang Saya alami sekaligus pelajari saat masih
-menjadi pejuang kanker. Salah satunya adalah belajar bagaimana menjadi pribadi yang semakin kuat tiap harinya. Selalu berpikir positif merupakan 
-poin terpenting untuk Saya dapat bertahan hingga dinyatakan sembuh. Usaha keras tanpa perasaan positif akan membuatmu sulit untuk mencapai tujuanmu 
-yang sebenarnya.
-blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla 
-blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla 
-blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla 
-blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla 
-blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla
-blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla 
-blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla 
-blabla bla blablablabla.<h6>
-    </div>
+        .title {
+            margin: 1% 0 1% 127px;
+        }
 
-</main>
+        .gambarvideo {
+            width: 30%;
+        }
+
+        .ketcerita {
+            margin-left: 127px;
+            margin-top: 30px;
+            text-align: justify;
+
+        }
+
+        .gambar-detail-forum {
+            text-align: center;
+        }
+
+        .detail-forum{
+            width: 95%;
+            margin: 0 0 2% 0;
+        }
+        .detail-button{
+            margin-left: auto;
+            font-size: 21px;
+        }
+
+    </style>
+
+    <main>
+        <div class="backprofil">
+            <h1><b><a class="" href="/lihat-profil" style="font-size: 24px;">{{ __('< Kembali ke Profil') }}</a></b></h1>
+        </div>
+
+        <div class="detail-forum">
+            <div class="ketprofil">
+                <div class=potoprofil>
+                    <img src="{{ asset('storage' . $post->users->avatar) }}" class="profilkecil">
+                </div>
+
+                <div class="namaprofil">
+                    <h6 style="font-size: 24px;"><b>{{$post->users->firstname . ' ' . $post->users->lastname}} </b></h6>
+                    <h6 style="margin:0;">{{$post->getStatusAttribute()}}</h6>
+                </div>
+
+                <div class="detail-button">
+                    <i class="fas fa-edit"></i>
+                    <a href="#">Edit</a>
+                    <i class="fas fa-comment-alt-exclamation"></i>
+                    <a href="#">Report</a>
+                </div>
+            </div>
+
+            <div class="title">
+                <h6 style="font-size: 24px;"><b>{{$post->title}}<b></h6>
+            </div>
+
+            <div class="gambar-detail-forum">
+                <img src="{{ asset('storage' . $post->image) }}" class="gambarvideo">
+            </div>
+
+            <div class="ketcerita">
+                <h6 style="font-size: 17px;">{{$post->content}}<h6>
+            </div>
+        </div>
+    </main>
 @endsection

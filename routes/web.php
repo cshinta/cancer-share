@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\NewPasswordController;
+use App\Http\Controllers\ForumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,8 @@ Route::get('/forum', function () {
     return view('forum.index');
 });
 
+Route::get('/forum', [ForumController::class,'getAllPosts']);
+
 Route::get('/reset-password', [NewPasswordController::class,'getDataUser']);
 
 Route::post('/reset-password',  [NewPasswordController::class,'store']);
@@ -70,6 +73,9 @@ Route::get('/lihat-profil', function () {
 Route::get('/baca-selengkapnya', function () {
     return view('forum.bacaselengkapnya');
 });
+
+Route::get('/forum/{id}', [ForumController::class,'getPostByID']);
+
 Route::get('/logout', [AuthenticatedSessionController::class, 'destroy']);
 
 require __DIR__ . '/auth.php';

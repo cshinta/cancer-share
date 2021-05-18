@@ -14,11 +14,11 @@ class CreateForumsTable extends Migration
     public function up()
     {
         Schema::create('forum', function (Blueprint $table) {
-            $table->id();
+            $table->id('postID');
             $table->string('image');
             $table->string('title');
             $table->text('content');
-            $table->integer('authorID');
+            $table->foreignId('id')->constrained('users');
             $table->integer('type');
             $table->timestamps();
         });

@@ -1,6 +1,6 @@
 #header-forum {
     margin-left: 5vw;
-    margin-top: 3vh;
+    margin-top: 2vh;
 }
 
 #add-post {
@@ -42,7 +42,7 @@
 }
 
 .avatar-forum {
-    max-width: 70%;
+    max-width: 90px;
     height: auto;
 }
 

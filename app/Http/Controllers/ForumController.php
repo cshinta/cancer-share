@@ -4,22 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\Forum;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class ForumController extends Controller
 {
     public function GetAllPosts(Request $request)
     {
-        $posts = Forum::all();
-        $login = $request->session()->get('login');
+        $posts = Forum::with('users')->get();
 
-        return view('forum.index')->with('posts', $posts)->with('login', $login);
+        return view('forum.index')->with('posts', $posts);
     }
 
     public function GetPostByID($id)
     {
         $post = Forum::find($id);
 
-        return view('forum.detail')->with('post', $post);
+        return view('forum.bacaselengkapnya')->with('post', $post);
     }
 
     public function CreatePost(Request $request)

@@ -14,9 +14,9 @@ class CreateReportsTable extends Migration
     public function up()
     {
         Schema::create('reports', function (Blueprint $table) {
-            $table->id();
-            $table->integer('postID');
-            $table->integer('userID');
+            $table->id('reportID');
+            $table->foreignId('postID')->constrained('forum');
+            $table->foreignId('id')->constrained('users');
             $table->text('content');
             $table->integer('type');
             $table->timestamps();

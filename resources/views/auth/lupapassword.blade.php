@@ -1,4 +1,4 @@
-  @extends('layouts.app')
+  @extends('layouts.auth')
 
   @section('content')
 
@@ -141,7 +141,7 @@
           <div class="form">
               <form action="{{ url('/forgot-password') }}" method="POST">
                   @csrf
-                  <input type="text" placeholder="alamat email atau no. Handphone" name="pulihan" required>
+                  <input type="text" placeholder="alamat email atau no. Handphone" name="email" required>
                   <div>
                       <button type="submit">Kirim Link Pulihan</button>
                   </div>

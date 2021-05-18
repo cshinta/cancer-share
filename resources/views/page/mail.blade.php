@@ -117,7 +117,7 @@
                 CancerShare. Mohon maaf atas ketidaknyamanannya dan kami akan segera membantu Anda untuk mengatasi
                 masalah ini. Anda dapat mengatur ulang kata sandi Anda dengan klik pada tombol di bawah ini. </p>
             <div class="mail-button">
-                <a href="#" role="button" class="btn-mail">Atur Ulang Kata Sandi</a>
+                <a href="http://127.0.0.1:8000/reset-password" role="button" class="btn-mail">Atur Ulang Kata Sandi</a>
             </div>
             <p class="mail-close">Salam, CancerShare.</p>
         </div>

@@ -6,6 +6,7 @@
             display: flex;
             margin: 0;
             padding: 0 3rem 0 0;
+            width: 100vw;
         }
 
         .columnleft {
@@ -15,14 +16,14 @@
 
         .columnright {
             width: 70%;
-            padding-left: 40px;
             text-align: center;
         }
 
+
         h2 {
-            font-family: "Signika";
+            font-family: 'Signika';
             margin-top: 10px;
-            font-size: 23px;
+            font-size: 24px;
             font-style: bold;
         }
 
@@ -30,35 +31,38 @@
 
 
         img.avatar {
-            width: 60%;
-            text-align: left;
+            width: 70%;
+            height: auto;
+            text-align: center;
             margin: 0%;
         }
 
         img.profil {
-            width: 17%;
+            width: 30%;
+            border-radius:50%;
+            height: auto;
             text-align: center;
-            margin: 10% 0 5px 0;
+            margin: 10% 0 5px 0px;
         }
 
         input[type=password] {
-            width: 47%;
+            width: 50%;
             height: 50px;
-            padding: 12px;
+            padding: 12px 20px;
             margin: 10px 0 10px 0;
             display: inline-block;
             border: 1px solid #9B9B9B;
             box-sizing: border-box;
             border-radius: 10px;
             background-color: #EDEDED;
-            font-family: "Signika";
+            font-family: 'Signika';
             font-size: medium;
         }
 
         button[type=Submit] {
-            width: 47%;
+            width: 50%;
             height: 48px;
-            padding: 12px;
+            padding: 12px 20px;
             margin: 10px 0 10px 0;
             background: #033D68;
             border: 1px solid #9B9B9B;
@@ -66,7 +70,7 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 10px;
             color: white;
-            font-family: "Signika";
+            font-family: 'Signika';
             font-size: medium;
         }
 
@@ -79,16 +83,16 @@
                 <img src="{{ asset('img/logo.png') }}" class="avatar">
             </div>
             <div class="columnright">
-                <img src="{{ asset('img/profilAvatar.png') }}" class="profil">
-                <h2><b>Arief Dava<b></h2>
-                <form action="{{ url('/reset-password') }}" method="POST">
+                <img src="{{ asset('storage' . $user->avatar) }}" class="profil">
+                <h2><b>{{ $user['name'] }}<b></h2>
+                <form action="{{ url('/change-password') }}" method="POST">
                     @csrf
-                    <input type="password" placeholder="Kata Sandi Baru" name="password" required>
+                    <input type="password" placeholder="Kata Sandi Lama" name="password" required>
                     <div>
-                        <input type="password" placeholder="Konfirmasi Kata Sandi" name="password_confirmation" required>
+                        <input type="password" placeholder="Kata Sandi Baru" name="password_confirmation" required>
                     </div>
-                    <div class="button">
-                        <button type="submit">Simpan</button>
+                    <div>
+                        <button type="submit">Ubah Kata Sandi</button>
                     </div>
                 </form>
             </div>

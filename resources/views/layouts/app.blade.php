@@ -17,7 +17,7 @@
     <!-- Link for CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/root.css') }}">
 
-    <link href="{{ asset('img/logo.png') }}" rel="icon" type="image/gif">
+    <link href="https://drive.google.com/uc?export=view&id=1Mqkp1xnbQYZaP_kf7yNqUNtF5QhK4xFK" rel="icon" type="image/gif">
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">

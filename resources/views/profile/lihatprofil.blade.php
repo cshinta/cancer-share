@@ -20,11 +20,11 @@
 .container-fluid {
     display: flex;
     margin: 0;
-    padding: 0 3rem 0 0;
+    padding: 0 1rem 0 0;
     }
 
 .kiri {
-    width:45%;
+    width: 45%;
     padding: 40px;
     margin-top:50px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
@@ -33,9 +33,9 @@
  }
 
 .tengah {
-    width:93%;
+    width:90%;
     padding-top: 30px;
-    margin-left:50px;
+    margin-left:80px;
     margin-top:50px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
     }
@@ -111,6 +111,7 @@ a:visited {
 }
 .konten{
     margin-top:20px;
+    width: 80%;
 }
 .selengkapnya{
     background: #033D68;
@@ -125,7 +126,13 @@ a:visited {
     margin-top:15px;
     margin-bottom:15px;
 }
-
+.isikonten{
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+   
+}
 
 </style>
 <main>
@@ -183,17 +190,19 @@ a:visited {
                     </div>
 
                 <div class="konten">
-            <h4><b>Kisah Saya Melawan Kanker <br>Paru-Paru 3 Tahun Lamanya</br><b></h4>
-            <h6 style="font-size: 15px;">Saya pernah menderita kanker paru-paru selama kurang lebih 3 tahun.<br> 
-            Namun, Saya berhasil dinyatakan sembuh total dari penyakit Saya<br> 
-            berkat kerja keras dan pengobatan yang Saya jalani secara rutin <br>
-            di Rumah Sakit Kanker Dharmais. Pihak rumah sakit juga ramah dan<br> 
-            sabar dalam menangani pasiennya sehingga Saya sebagai pasien<br> 
-            pun nyaman dan senang menjalani perawatan.Kalau ditanya, <br>
-            pernah ga sih ngerasa putus asa dan ingin<br> 
-            menyerah saja?Jawabannya, pasti pernah. Lalu, bagaimana cara<br> 
-            Saya bangun dari keputus-asaan tersebut? Banyak hal yang<br> 
-            Saya alami sekaligus pelajari saat masih menjadi pejuang kanker .....<br></h6>
+            <h4 style="font-size:20px"><b>Kisah Saya Melawan Kanker Paru-Paru 3 Tahun Lamanya<b></h4>
+            <div class="isikonten">
+            <h6 style="font-size: 15px">Saya pernah menderita kanker paru-paru selama kurang lebih 3 tahun.
+            Namun, Saya berhasil dinyatakan sembuh total dari penyakit Saya 
+            berkat kerja keras dan pengobatan yang Saya jalani secara rutin 
+            di Rumah Sakit Kanker Dharmais. Pihak rumah sakit juga ramah dan 
+            sabar dalam menangani pasiennya sehingga Saya sebagai pasien 
+            pun nyaman dan senang menjalani perawatan.Kalau ditanya, 
+            pernah ga sih ngerasa putus asa dan ingin
+            menyerah saja?Jawabannya, pasti pernah. Lalu, bagaimana cara
+            Saya bangun dari keputus-asaan tersebut? Banyak hal yang 
+            Saya alami sekaligus pelajari saat masih menjadi pejuang kanker .....</h6>
+            </div>
                 </div>
                 <div class="tombolselengkapnya"><button onclick="window.location.href='#'" class="selengkapnya" >Baca Selengkapnya</button></div>
                 </div>
@@ -201,3 +210,4 @@ a:visited {
 
 </div>
 </main>
+@endsection

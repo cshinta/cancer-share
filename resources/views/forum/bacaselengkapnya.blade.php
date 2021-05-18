@@ -42,6 +42,11 @@
 .ketcerita{
     margin-left:127px;
     margin-top:30px;
+    display: -webkit-box;
+    -webkit-line-clamp: 15;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+   
 }
 
 </style>
@@ -70,21 +75,22 @@
 <img src="{{ asset('img/gambarvideo.png') }}" class="gambarvideo">
 
 <div class="ketcerita">
-<h6 style="font-size: 17px;">Saya pernah menderita kanker paru-paru selama kurang lebih 3 tahun. Namun, Saya berhasil dinyatakan sembuh total dari penyakit Saya berkat kerja<br>
-keras dan pengobatan yang Saya jalani secara rutin di Rumah Sakit Kanker Dharmais. Pihak rumah sakit juga ramah dan sabar dalam menangani<br> pasiennya
-sehingga Saya sebagai pasien pun nyaman dan senang menjalani perawatan. Kalau ditanya, pernah ga sih ngerasa putus asa dan ingin<br> menyerah saja? 
+<h6 style="font-size: 17px;">Saya pernah menderita kanker paru-paru selama kurang lebih 3 tahun. Namun, Saya berhasil dinyatakan sembuh total dari penyakit Saya berkat kerja
+keras dan pengobatan yang Saya jalani secara rutin di Rumah Sakit Kanker Dharmais. Pihak rumah sakit juga ramah dan sabar dalam menangani pasiennya
+sehingga Saya sebagai pasien pun nyaman dan senang menjalani perawatan. Kalau ditanya, pernah ga sih ngerasa putus asa dan ingin menyerah saja? 
 Jawabannya, pasti pernah. Lalu, bagaimana cara Saya bangun dari keputus-asaan tersebut? Banyak hal yang Saya alami sekaligus pelajari saat masih
 menjadi pejuang kanker. Salah satunya adalah belajar bagaimana menjadi pribadi yang semakin kuat tiap harinya. Selalu berpikir positif merupakan 
 poin terpenting untuk Saya dapat bertahan hingga dinyatakan sembuh. Usaha keras tanpa perasaan positif akan membuatmu sulit untuk mencapai tujuanmu 
-yang sebenarnya.<br><br>
-blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla <br>
-blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla <br>
-blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla<br> 
-blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla <br>
-blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla<br> 
-blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla <br>
-blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla <br>
+yang sebenarnya.
+blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla 
+blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla 
+blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla 
+blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla 
+blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla
+blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla 
+blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla blabla bla blablablabla blablabla 
 blabla bla blablablabla.<h6>
     </div>
 
 </main>
+@endsection

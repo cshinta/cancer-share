@@ -38,7 +38,7 @@
         }
 
         img.profil {
-            width: 30%;
+            width: 300px;
             border-radius:50%;
             height: auto;
             text-align: center;

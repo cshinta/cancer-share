@@ -43,10 +43,10 @@ Route::get('/dashboard', [ProfileController::class,'getDashboard']);
 Route::get('/forum', function () {
     return view('forum.index');
 });
-
 Route::get('/donasi', function () {
     return view('page.donasi');
 });
+Route::get('/reset-password', [NewPasswordController::class,'getDataUser']);
 
 Route::get('/reset-password', [NewPasswordController::class,'getDataUser']);
 
@@ -71,6 +71,9 @@ Route::get('/lihat-profil', function () {
     return view('profile.lihatprofil');
 });
 
+Route::get('/baca-selengkapnya', function () {
+    return view('forum.bacaselengkapnya');
+});
 Route::get('/logout', [AuthenticatedSessionController::class, 'destroy']);
 
 require __DIR__ . '/auth.php';

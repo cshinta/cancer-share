@@ -69,7 +69,7 @@
         }
 
         img.profil {
-            width: 50%;
+            width: 300px;
             text-align: center;
             margin: 12% 0 3% 0;
             border-radius: 50%;

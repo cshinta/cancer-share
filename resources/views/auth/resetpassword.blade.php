@@ -36,9 +36,10 @@
         }
 
         img.profil {
-            width: 17%;
+            width: 300px;
             text-align: center;
             margin: 10% 0 5px 0;
+            border-radius: 50%;
         }
 
         input[type=password] {
@@ -79,8 +80,8 @@
                 <img src="{{ asset('img/logo.png') }}" class="avatar">
             </div>
             <div class="columnright">
-                <img src="{{ asset('img/profilAvatar.png') }}" class="profil">
-                <h2><b>Arief Dava<b></h2>
+                <img src="{{ asset('storage' . $user->avatar) }}" class="profil">
+                <h2><b>{{ $user->firstname . ' ' . $user->lastname }}<b></h2>
                 <form action="{{ url('/reset-password') }}" method="POST">
                     @csrf
                     <input type="password" placeholder="Kata Sandi Baru" name="password" required>

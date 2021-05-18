@@ -35,11 +35,12 @@ class PasswordResetLinkController extends Controller
         try{
             $details =
                 [
-                    'nama' => $request->user()->firstname,
+                    'nama' => $user->firstname
                 ];
 
             Mail::to($request->email)->send(new PasswordMail($details));
             $status=true;
+            $request->session()->put('email', $request->input('email'));
         }
         catch(\Exception $e){
             $status=false;

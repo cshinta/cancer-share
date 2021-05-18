@@ -106,7 +106,552 @@
 
                 </div>
             </div>
-            <nav aria-label="Page navigation example">
+            <div class="card w-100 forum-card" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">
+                    <div class="row">
+                        <div class="forum-pic">
+                            <img src="{{ asset('img/profilAvatar.png') }}" class="avatar-forum">
+                        </div>
+                        <div class="col-10 forum-isi">
+                            <div class="user-and-type">
+                                <p id="user-forum">Abi Aryaza | </p>
+                                <p id="type-forum"> Kanker Paru-Paru</p>
+                            </div>
+
+                            <h5 class="card-title" id="title-forum">Kisah saya menghadapi aul</h5>
+                        </div>
+                        <div class="col time-forum">
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="forum-synopsis">
+                        <p class="card-text truncate-synopsis" id="synopsis-forum">Some quick example text to build on the
+                            card title and make up the bulk of
+                            the
+                            card's content. Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's co</p>
+                    </div>
+                    </p>
+                    <div class="btn-forum">
+                        <a href="#" class="btn btn-primary btn-forum-next">Baca Selengkapnya</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card w-100 forum-card" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">
+                    <div class="row">
+                        <div class="forum-pic">
+                            <img src="{{ asset('img/profilAvatar.png') }}" class="avatar-forum">
+                        </div>
+                        <div class="col-10 forum-isi">
+                            <div class="user-and-type">
+                                <p id="user-forum">Abi Aryaza | </p>
+                                <p id="type-forum"> Kanker Paru-Paru</p>
+                            </div>
+
+                            <h5 class="card-title" id="title-forum">Kisah saya menghadapi aul</h5>
+                        </div>
+                        <div class="col time-forum">
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="forum-synopsis">
+                        <p class="card-text truncate-synopsis" id="synopsis-forum">Some quick example text to build on the
+                            card title and make up the bulk of
+                            the
+                            card's content. Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's co</p>
+                    </div>
+                    </p>
+                    <div class="btn-forum">
+                        <a href="#" class="btn btn-primary btn-forum-next">Baca Selengkapnya</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card w-100 forum-card" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">
+                    <div class="row">
+                        <div class="forum-pic">
+                            <img src="{{ asset('img/profilAvatar.png') }}" class="avatar-forum">
+                        </div>
+                        <div class="col-10 forum-isi">
+                            <div class="user-and-type">
+                                <p id="user-forum">Abi Aryaza | </p>
+                                <p id="type-forum"> Kanker Paru-Paru</p>
+                            </div>
+
+                            <h5 class="card-title" id="title-forum">Kisah saya menghadapi aul</h5>
+                        </div>
+                        <div class="col time-forum">
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="forum-synopsis">
+                        <p class="card-text truncate-synopsis" id="synopsis-forum">Some quick example text to build on the
+                            card title and make up the bulk of
+                            the
+                            card's content. Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's co</p>
+                    </div>
+                    </p>
+                    <div class="btn-forum">
+                        <a href="#" class="btn btn-primary btn-forum-next">Baca Selengkapnya</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card w-100 forum-card" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">
+                    <div class="row">
+                        <div class="forum-pic">
+                            <img src="{{ asset('img/profilAvatar.png') }}" class="avatar-forum">
+                        </div>
+                        <div class="col-10 forum-isi">
+                            <div class="user-and-type">
+                                <p id="user-forum">Abi Aryaza | </p>
+                                <p id="type-forum"> Kanker Paru-Paru</p>
+                            </div>
+
+                            <h5 class="card-title" id="title-forum">Kisah saya menghadapi aul</h5>
+                        </div>
+                        <div class="col time-forum">
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="forum-synopsis">
+                        <p class="card-text truncate-synopsis" id="synopsis-forum">Some quick example text to build on the
+                            card title and make up the bulk of
+                            the
+                            card's content. Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's co</p>
+                    </div>
+                    </p>
+                    <div class="btn-forum">
+                        <a href="#" class="btn btn-primary btn-forum-next">Baca Selengkapnya</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card w-100 forum-card" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">
+                    <div class="row">
+                        <div class="forum-pic">
+                            <img src="{{ asset('img/profilAvatar.png') }}" class="avatar-forum">
+                        </div>
+                        <div class="col-10 forum-isi">
+                            <div class="user-and-type">
+                                <p id="user-forum">Abi Aryaza | </p>
+                                <p id="type-forum"> Kanker Paru-Paru</p>
+                            </div>
+
+                            <h5 class="card-title" id="title-forum">Kisah saya menghadapi aul</h5>
+                        </div>
+                        <div class="col time-forum">
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="forum-synopsis">
+                        <p class="card-text truncate-synopsis" id="synopsis-forum">Some quick example text to build on the
+                            card title and make up the bulk of
+                            the
+                            card's content. Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's co</p>
+                    </div>
+                    </p>
+                    <div class="btn-forum">
+                        <a href="#" class="btn btn-primary btn-forum-next">Baca Selengkapnya</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card w-100 forum-card" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">
+                    <div class="row">
+                        <div class="forum-pic">
+                            <img src="{{ asset('img/profilAvatar.png') }}" class="avatar-forum">
+                        </div>
+                        <div class="col-10 forum-isi">
+                            <div class="user-and-type">
+                                <p id="user-forum">Abi Aryaza | </p>
+                                <p id="type-forum"> Kanker Paru-Paru</p>
+                            </div>
+
+                            <h5 class="card-title" id="title-forum">Kisah saya menghadapi aul</h5>
+                        </div>
+                        <div class="col time-forum">
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="forum-synopsis">
+                        <p class="card-text truncate-synopsis" id="synopsis-forum">Some quick example text to build on the
+                            card title and make up the bulk of
+                            the
+                            card's content. Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's co</p>
+                    </div>
+                    </p>
+                    <div class="btn-forum">
+                        <a href="#" class="btn btn-primary btn-forum-next">Baca Selengkapnya</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card w-100 forum-card" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">
+                    <div class="row">
+                        <div class="forum-pic">
+                            <img src="{{ asset('img/profilAvatar.png') }}" class="avatar-forum">
+                        </div>
+                        <div class="col-10 forum-isi">
+                            <div class="user-and-type">
+                                <p id="user-forum">Abi Aryaza | </p>
+                                <p id="type-forum"> Kanker Paru-Paru</p>
+                            </div>
+
+                            <h5 class="card-title" id="title-forum">Kisah saya menghadapi aul</h5>
+                        </div>
+                        <div class="col time-forum">
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="forum-synopsis">
+                        <p class="card-text truncate-synopsis" id="synopsis-forum">Some quick example text to build on the
+                            card title and make up the bulk of
+                            the
+                            card's content. Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's co</p>
+                    </div>
+                    </p>
+                    <div class="btn-forum">
+                        <a href="#" class="btn btn-primary btn-forum-next">Baca Selengkapnya</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card w-100 forum-card" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">
+                    <div class="row">
+                        <div class="forum-pic">
+                            <img src="{{ asset('img/profilAvatar.png') }}" class="avatar-forum">
+                        </div>
+                        <div class="col-10 forum-isi">
+                            <div class="user-and-type">
+                                <p id="user-forum">Abi Aryaza | </p>
+                                <p id="type-forum"> Kanker Paru-Paru</p>
+                            </div>
+
+                            <h5 class="card-title" id="title-forum">Kisah saya menghadapi aul</h5>
+                        </div>
+                        <div class="col time-forum">
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="forum-synopsis">
+                        <p class="card-text truncate-synopsis" id="synopsis-forum">Some quick example text to build on the
+                            card title and make up the bulk of
+                            the
+                            card's content. Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's co</p>
+                    </div>
+                    </p>
+                    <div class="btn-forum">
+                        <a href="#" class="btn btn-primary btn-forum-next">Baca Selengkapnya</a>
+                    </div>
+
+                </div>
+            </div>
+            <div id="pagination-forum">
                 <ul class="pagination justify-content-center">
                     <li class="page-item disabled">
                         <a class="page-link" href="#" tabindex="-1">Kembali</a>
@@ -118,7 +663,7 @@
                         <a class="page-link" href="#">Selanjutnya</a>
                     </li>
                 </ul>
-            </nav>
+            </div>
         </div>
     </main>
 

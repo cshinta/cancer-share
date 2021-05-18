@@ -44,9 +44,7 @@ Route::get('/forum', function () {
     return view('forum.index');
 });
 
-Route::get('/reset-password', function () {
-    return view('auth.resetpassword');
-});
+Route::get('/reset-password', [NewPasswordController::class,'getDataUser']);
 
 Route::post('/reset-password',  [NewPasswordController::class,'store']);
 

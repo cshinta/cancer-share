@@ -60,4 +60,12 @@ class NewPasswordController extends Controller
             ? redirect('/login')
             : back()->withErrors(['email' => __($status)]);
     }
+
+    public function getDataUser(Request $request){
+        $email = $request->session()->get('email');
+
+        $user =  User::where('email', $email)->first();
+
+        return view('auth.resetpassword')->with('user', $user);
+    }
 }

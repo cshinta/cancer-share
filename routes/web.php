@@ -50,6 +50,9 @@ Route::get('/donasi', function () {
 Route::get('/home', function () {
     return view('mainpage');
 });
+Route::get('/edukasi', function () {
+    return view('page.edukasi');
+});
 Route::get('/reset-password', [NewPasswordController::class,'getDataUser']);
 
 Route::get('/forum', [ForumController::class,'getAllPosts']);

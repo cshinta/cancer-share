@@ -82,4 +82,16 @@ Route::get('/forum/{id}', [ForumController::class,'getPostByID']);
 
 Route::get('/logout', [AuthenticatedSessionController::class, 'destroy']);
 
+Route::get('/tentang-kami', function () {
+    return view('profile.tentangkami');
+});
+
+Route::get('/upload', function () {
+    return view('forum.upload');
+});
+
+Route::get('/report', function () {
+    return view('forum.report');
+});
+
 require __DIR__ . '/auth.php';

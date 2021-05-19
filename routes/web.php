@@ -47,6 +47,9 @@ Route::get('/forum', function () {
 Route::get('/donasi', function () {
     return view('page.donasi');
 });
+Route::get('/home', function () {
+    return view('mainpage');
+});
 Route::get('/reset-password', [NewPasswordController::class,'getDataUser']);
 
 Route::get('/forum', [ForumController::class,'getAllPosts']);

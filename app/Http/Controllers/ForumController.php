@@ -15,11 +15,23 @@ class ForumController extends Controller
         return view('forum.index')->with('posts', $posts);
     }
 
-    public function GetPostByID($id)
+    public function GetPostsByFilter($filtertype, Request $request)
+    {
+        $posts = Forum::with('users')->where('type', $filtertype)->get();
+
+        return view('forum.index')->with('posts', $posts);
+    }
+
+    public function GetPostByID($id, Request $request)
     {
         $post = Forum::find($id);
+        try {
+            $isUser = $request->user()->id;
+        } catch (\Exception $e) {
+            $isUser = 0;
+        }
 
-        return view('forum.bacaselengkapnya')->with('post', $post);
+        return view('forum.bacaselengkapnya')->with('post', $post)->with('id', $isUser);
     }
 
     public function CreatePost(Request $request)
@@ -40,7 +52,7 @@ class ForumController extends Controller
         $post->image = "upload/post/" . $image_title;
         $post->save();
 
-        return redirect(url('/forum'))->with('success',"Post Created");
+        return redirect(url('/forum'))->with('success', "Post Created");
     }
 
     public function DeletePost($id)
@@ -48,12 +60,12 @@ class ForumController extends Controller
         $post = Forum::find($id);
         $post->delete();
 
-        return redirect(url('/dashboard'))->with('success',"Post Deleted");
+        return redirect(url('/dashboard'))->with('success', "Post Deleted");
     }
 
     public function UpdatePost(Request $request)
     {
-        
+
         $input = $request->all();
         extract($input);
 
@@ -62,6 +74,6 @@ class ForumController extends Controller
         $post->content = $content;
         $post->save();
 
-        return redirect(url('/dashboard'))->with('success',"Post Updated");
+        return redirect(url('/dashboard'))->with('success', "Post Updated");
     }
 }

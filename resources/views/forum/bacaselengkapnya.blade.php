@@ -4,7 +4,6 @@
         .backprofil {
 
             padding-left: 50px;
-            padding-top: 20px;
         }
 
         a {
@@ -87,10 +86,13 @@
                 </div>
 
                 <div class="detail-button">
+                    @if ($id == $post->users->id)
                     <i class="fas fa-edit"></i>
                     <a href="#">Edit</a>
+                    @else
                     <i class="fas fa-comment-alt-exclamation"></i>
-                    <a href="#">Report</a>
+                    <a href="#">Laporkan</a>
+                    @endif
                 </div>
             </div>
 

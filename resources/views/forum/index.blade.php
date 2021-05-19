@@ -27,12 +27,12 @@
                         </button>
                         <div class="dropdown-menu filter-menu">
                             <div class="row">
-                                <div class="col"><a class="dropdown-item" href="#">Kanker Paru-Paru</a></div>
-                                <div class="col"><a class="dropdown-item" href="#">Kanker Hati</a></div>
+                                <div class="col"><a class="dropdown-item" href="{{url('/forum/filter/1')}}">Kanker Paru-Paru</a></div>
+                                <div class="col"><a class="dropdown-item" href="{{url('/forum/filter/2')}}">Kanker Hati</a></div>
                             </div>
                             <div class="row">
-                                <div class="col"><a class="dropdown-item" href="#">Kanker Darah</a></a></div>
-                                <div class="col"><a class="dropdown-item" href="#">Kanker Usus Besar</a></div>
+                                <div class="col"><a class="dropdown-item" href="{{url('/forum/filter/3')}}">Kanker Darah</a></a></div>
+                                <div class="col"><a class="dropdown-item" href="{{url('/forum/filter/4')}}">Kanker Usus Besar</a></div>
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                     </div>
                     </p>
                     <div class="btn-forum">
-                        <a href="{{url('/forum')}}/{{$post->postID}}" class="btn btn-primary btn-forum-next">Baca Selengkapnya</a>
+                        <a href="{{url('/forum/posts')}}/{{$post->postID}}" class="btn btn-primary btn-forum-next">Baca Selengkapnya</a>
                     </div>
 
                 </div>

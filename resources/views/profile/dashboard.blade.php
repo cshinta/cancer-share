@@ -69,7 +69,7 @@
         }
 
         img.profil {
-            width: 300px;
+            width: 200px;
             text-align: center;
             margin: 12% 0 3% 0;
             border-radius: 50%;
@@ -99,7 +99,7 @@
             <div class="column right">
                 <img src="{{ asset('/storage' . $user->avatar) }}" class="profil">
                 <div class="editprofil">
-                    <button class="tombol profil">Lihat Profil</button>
+                    <button class="tombol profil" onclick="window.location.href='{{url('/lihat-profil')}}'">Lihat Profil</button>
                 </div>
             </div>
             <div class="dashboard-column">
@@ -109,7 +109,7 @@
                 <div class="rectangle">
                     <nav>
                         <ul>
-                            <li><a href="{{url('/lihat-profil')}}" class="current">HOME</a></li>
+                            <li><a href="{{url('/')}}" class="current">HOME</a></li>
                             <li><a href="">BERITA</a></li>
                             <li><a href="{{url('/forum')}}">FORUM</a></li>
                             <li><a href="">DONASI</a></li>

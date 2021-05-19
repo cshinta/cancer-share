@@ -12,8 +12,15 @@ body{
     box-sizing: border-box;
 }
 
-#main-container{
-    min-height: calc(100vh - 50px);
+.main-container{
     overflow: hidden;
+}
+
+#auth-layout{
+    min-height: calc(100vh - 50px);
+}
+
+#app-layout{
+    min-height: calc(100vh - 50px - 130px);
 }
 

@@ -7,6 +7,7 @@ use App\Http\Requests\UpdatePasswordRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Forum;
 
 class ProfileController extends Controller {
     public function update(UpdateProfileRequest $request) {
@@ -35,6 +36,13 @@ class ProfileController extends Controller {
         $user = Auth::user();
 
         return view('profile.dashboard')->with('user', $user);
+    }
+
+    public function getProfilePage(Request $request){
+        $user = Auth::user();
+        $posts = Forum::with('users')->where('id', $user->id)->get();
+
+        return view('profile.lihatprofil')->with('posts', $posts)->with('user', $user);
     }
 
 }

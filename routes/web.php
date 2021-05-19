@@ -51,6 +51,8 @@ Route::get('/reset-password', [NewPasswordController::class,'getDataUser']);
 
 Route::get('/forum', [ForumController::class,'getAllPosts']);
 
+Route::get('/forum/filter/{filtertype}', [ForumController::class,'GetPostsByFilter']);
+
 Route::get('/reset-password', [NewPasswordController::class,'getDataUser']);
 
 Route::post('/reset-password',  [NewPasswordController::class,'store']);
@@ -70,15 +72,9 @@ Route::get('/sunting-profil', [ProfileController::class,'getDataProfile']);
 
 Route::post('/sunting-profil', [ProfileController::class,'update']);
 
-Route::get('/lihat-profil', function () {
-    return view('profile.lihatprofil');
-});
+Route::get('/lihat-profil', [ProfileController::class,'getProfilePage']);
 
-Route::get('/baca-selengkapnya', function () {
-    return view('forum.bacaselengkapnya');
-});
-
-Route::get('/forum/{id}', [ForumController::class,'getPostByID']);
+Route::get('/forum/posts/{id}', [ForumController::class,'getPostByID']);
 
 Route::get('/logout', [AuthenticatedSessionController::class, 'destroy']);
 

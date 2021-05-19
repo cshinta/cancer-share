@@ -31,10 +31,10 @@
 </head>
 
 <body>
-    <div id="main-container" class="cf">
+    <div id="auth-layout" class="main-container">
         @yield('content')
     </div>
-    <div class="cf">
+    <div>
         @include('inc.footer')
     </div>
 </body>

@@ -402,7 +402,7 @@
                     LIHAT BERITA LAINNYA
                     <a href="#" class="btn btn-primary btn-lihat-lengkap-next ">></a>
                 </div>
-                <p style="margin-top:50px;color:white;font-weight:bold;">KOMPAS.COM</p>
+                <p style="margin-top:30%;color:white;font-weight:bold;">KOMPAS.COM</p>
             </div>
             </div>
             <script>$('.carousel').carousel()</script>

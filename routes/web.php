@@ -53,6 +53,12 @@ Route::get('/home', function () {
 Route::get('/edukasi', function () {
     return view('page.edukasi');
 });
+Route::get('/berita', function () {
+    return view('page.berita');
+});
+Route::get('/berita-lengkap', function () {
+    return view('page.beritalengkap');
+});
 Route::get('/reset-password', [NewPasswordController::class,'getDataUser']);
 
 Route::get('/forum', [ForumController::class,'getAllPosts']);

@@ -50,14 +50,14 @@
         .btn-next:hover{
             background-color:rgb(22, 15, 71);
         }
-        .line{
-            width: 100%;
-            height: 0px;
-            left: 2px;
-            margin-top:10px;
-            margin-bottom:5px;
-
-            border: 1px solid #000000;
+        #content{
+            border:1px solid #000;
+        }
+        .titlebox{
+            float:left;
+            padding:0 5px;
+            margin:-25px 0 0 50%;
+            background:#fff;
         }
     </style>
     <main>
@@ -170,8 +170,9 @@
             </div>
         </div>
     </div>
-    <div class="line"style="text-align:center;"><legend style="font-size:36px;margin-top:-1.7%;">Lihat Edukasi Lainnya</legend></div>
-
+    <div id="content"style="margin-top:10px;margin-bottom:5px;">
+            <div class="titlebox"style="font-size:36px;">Lihat Edukasi Lainnya</div>
+    </div>
     <div class="row"style="margin:100px 10% 100px 9%;">
         <div class="col-4"style="text-align:right;">
             <div class="btn">

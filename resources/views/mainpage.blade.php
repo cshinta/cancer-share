@@ -2,7 +2,7 @@
 
 @section('content')
     <style>
-    .rectangle{
+        .rectangle{
             position: absolute;
             width: 140px;
             height: 20px;

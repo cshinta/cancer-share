@@ -18,15 +18,17 @@
           font-size:60px;
         }
         .accordion{
-            margin-right:5.7%;
+            margin-right:4.4%;
             margin-left:4.4%;
-            border-radius:#033D68;
+            border-radius:45px;
             margin-bottom:120px;
+            border: 2px solid #033D68;
         }
         .accordion-button{
             background-color:#033D68;
             color:white;
             font-size:48px;
+            text-align:left;
         }
         .accordion-body{
             text-align:justify;
@@ -38,8 +40,7 @@
             border-color:#033D68;
         }
         .btn{
-            text-align: right;
-            padding: 5px 50px 5px 50px;
+            padding: 5px 30px 5px 30px;
             font-size:24px;
         }
         .btn-next{
@@ -64,7 +65,7 @@
         <div class="col-6"style="padding-left:80px;margin-bottom:78px;">
             <div class="judul">Kanker Paru-Paru</div>
             <div class="rectangle"></div>
-            <div class="isi"style="margin-top:48px;text-align:justify;margin-right:24%;">
+            <div class="isi"style="margin-top:48px;text-align:justify;margin-right:5%;">
                 <p class="card-text " id="synopsis-forum" style="font-size:20px;">
                 Kanker paru-paru adalah suatu kondisi di mana sel-sel tumbuh secara tidak terkendali di dalam paru-paru 
                 (organ yang berfungsi untuk menyebarkan oksigen ke dalam darah saat menghirup napas dan membuang karbondioksida
@@ -75,12 +76,12 @@
                 </p>
             </div>
         </div>
-        <div class="col-6"style="margin-top:20px;"><img src="{{ asset('img/edukasiParu.png') }}" style="width:700px;height:500px;"></div>
+        <div class="col-6"style="margin-top:20px;"><img src="{{ asset('img/edukasiParu.png') }}" style="width:650px;height:500px;"></div>
     </div>
     <div class="accordion" id="accordionPanelsStayOpenExample">
         <div class="accordion-item">
             <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne"style="padding-right:90%;">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne"style="width:100%;border-radius:45px 45px 0px 0px ;height:100%;">
                 Gejala
             </button>
             </h2>
@@ -110,7 +111,7 @@
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo"style="padding-right:85.2%;">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo"style="width:100%;height:100%;">
                 Penyebab
             </button>
             </h2>
@@ -135,7 +136,7 @@
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree"style="padding-right:81.3%;">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree"style="width:100%;height:100%;">
                 Pencegahan
             </button>
             </h2>
@@ -153,7 +154,7 @@
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="panelsStayOpen-headingFour">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree"style="padding-right:81.7%;">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree"style="width:100%;border-radius:0px 0px 45px 45px ;height:100%;">
                 Pengobatan
             </button>
             </h2>

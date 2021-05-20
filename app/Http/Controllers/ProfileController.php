@@ -10,7 +10,15 @@ use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller {
     public function update(UpdateProfileRequest $request) {
-        auth()->user()->update($request->only('firstname', 'lastname', 'username', 'email', 'phone', 'avatar'));
+        auth()->user()->update($request->only('firstname', 'lastname', 'username', 'email', 'phone'));
+
+        if($request->hasFile('avatar')) {
+            $image = $request->file('avatar');
+            $imageName = $request['username'];  
+            $avatarPath = $image->storeAs('public/avatars/', $imageName.'.jpeg');
+            $avatarPathDB= substr($avatarPath, 6);
+            auth()->user()->update(['avatar'=>$avatarPathDB]);
+        }
 
         return back()->with('message', 'Profile saved successfully');
     }

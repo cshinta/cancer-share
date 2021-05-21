@@ -13,11 +13,11 @@
     .navbarright li a:hover{
         color: #000000;
     }
-    nav li{
+    #navbar-page li{
         display: inline;
         vertical-align:middle;
     }
-    nav {
+    #navbar-page {
         display:flex;
         justify-content: space-between;
         height: 130px;
@@ -59,7 +59,7 @@
 
 </style>
 
-<nav>
+<nav id="navbar-page">
     <ul class="navbarleft">
         <li><img src="{{ asset('img/logo.png') }}" width=15% ></li>
         <li><a href="">Edukasi</a></li>

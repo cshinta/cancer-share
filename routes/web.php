@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\ForumController;
+use App\Http\Controllers\ReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,15 +80,23 @@ Route::get('/forum/posts/{id}', [ForumController::class,'getPostByID']);
 Route::get('/logout', [AuthenticatedSessionController::class, 'destroy']);
 
 Route::get('/tentang-kami', function () {
-    return view('profile.tentangkami');
+    return view('page.tentangkami');
 });
 
-Route::get('/upload', function () {
+Route::get('/upload-forum', function () {
     return view('forum.upload');
 });
 
-Route::get('/report', function () {
-    return view('forum.report');
-});
+Route::get('/edit-forum/{id}', [ForumController::class,'UpdateView']);
+
+Route::post('/edit-forum', [ForumController::class,'UpdatePost']);
+
+Route::get('/delete/{postID}', [ForumController::class,'DeletePost']);
+
+Route::post('/upload-forum', [ForumController::class,'CreatePost']);
+
+Route::get('/report/{postID}', [ReportController::class,'showReport']);
+
+Route::post('/report', [ReportController::class,'createReport']);
 
 require __DIR__ . '/auth.php';

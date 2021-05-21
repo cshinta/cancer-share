@@ -102,6 +102,7 @@
             display: flex;
             margin-top: 25px;
             padding: 0 5px 0 0;
+            margin-right: 0;
         }
 
         .profilkecilkiri {
@@ -111,6 +112,7 @@
         .profilketerangan {
             margin-left: 20px;
             margin-top: 8px;
+            width: 100%;
         }
 
         .tulisan {
@@ -127,7 +129,6 @@
 
         .konten {
             margin-top: 20px;
-            width: 90%;
         }
 
         .selengkapnya {
@@ -136,18 +137,18 @@
             border-radius: 15px;
             height: 45px;
             color: #FFFFFF;
-            width: 40%;
-            margin-left: 250px;
+            width: 200px;
         }
 
         .tombolselengkapnya {
             margin-top: 15px;
             margin-bottom: 15px;
+            text-align: right;
         }
 
         .isikonten {
             display: -webkit-box;
-            -webkit-line-clamp: 5;
+            -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-align: justify;
@@ -156,6 +157,35 @@
 
         .lihat-profil-detail {
             margin-bottom: 3%;
+        }
+
+        .postingan {
+            width: 90%;
+        }
+
+        hr.solid {
+            border-top: 3px solid #bbb;
+        }
+
+        .empty-forum {
+            margin: 3% 0;
+            text-align: center;
+            color: #767676;
+        }
+
+        .share-empty {
+            margin: 10% 0;
+            color: black;
+        }
+
+        .add-button-empty {
+            font-weight: bolder;
+            margin-bottom: 2%;
+        }
+
+        #add-icon {
+            font-size: 26px;
+            color: #144a73;
         }
 
     </style>
@@ -198,35 +228,51 @@
                 <div class="title">
                     <h2 class="judul"><b>Kisah Anda</b></h2>
                 </div>
-
-                @foreach ($posts as $post)
-                    <div class="rowprofil">
-                        <div class="profilkecilkiri">
-                            <img src="{{ asset('storage' . $post->users->avatar) }}" class="profilkecil">
-                        </div>
-                        <div class="profilketerangan">
-                            <div class="tulisan">
-                                <div class="namaprofil">
-                                    <h6><b>{{ $post->users->firstname . ' ' . $post->users->lastname }}</b></h6>
-                                </div>
-                                <div class="namakategori">
-                                    <h6>{{ $post->getStatusAttribute() }}</h6>
-                                </div>
+                @if ($posts->isEmpty())
+                    <div class="empty-forum">
+                        <h3>Belum ada pengalaman yang diunggah.</h3>
+                        <div class="share-empty">
+                            <div class="add-button-empty"><i class="fas fa-plus" id="add-icon"></i></div>
+                            <div class="empty-text">
+                                <h3><b>Bagi Pengalaman?</b></h3>
                             </div>
-
-                            <div class="konten">
-                                <h4 style="font-size:20px"><b>{{ $post->title }}</b></h4>
-                                <div class="isikonten">
-                                    <h6 style="font-size: 15px">{{ $post->content }}</h6>
-                                </div>
-                            </div>
-                            <div class="tombolselengkapnya"><button
-                                    onclick="window.location.href='{{ url('/forum/posts') }}/{{ $post->postID }}'"
-                                    class="selengkapnya">Baca
-                                    Selengkapnya</button></div>
                         </div>
                     </div>
-                @endforeach
+                @else
+                    @foreach ($posts as $post)
+                        <div class="postingan">
+                            <div class="rowprofil">
+                                <div class="profilkecilkiri">
+                                    <img src="{{ asset('storage' . $post->users->avatar) }}" class="profilkecil">
+                                </div>
+                                <div class="profilketerangan">
+                                    <div class="tulisan">
+                                        <div class="namaprofil">
+                                            <h6><b>{{ $post->users->firstname . ' ' . $post->users->lastname }}</b></h6>
+                                        </div>
+                                        <div class="namakategori">
+                                            <h6>{{ $post->getStatusAttribute() }}</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="konten">
+                                        <h4 style="font-size:20px"><b>{{ $post->title }}</b></h4>
+                                        <div class="isikonten">
+                                            <h6 style="font-size: 15px">{{ $post->content }}</h6>
+                                        </div>
+                                    </div>
+                                    <div class="tombolselengkapnya"><button
+                                            onclick="window.location.href='{{ url('/forum/posts') }}/{{ $post->postID }}'"
+                                            class="selengkapnya">Baca
+                                            Selengkapnya</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        @if ($loop->last == false)
+                            <hr class="solid">
+                        @endif
+                    @endforeach
+                @endif
             </div>
     </main>
 @endsection

@@ -50,6 +50,9 @@ class RegisteredUserController extends Controller
             $avatarPath = $image->storeAs('public/avatars/', $imageName.'.jpeg');
             $avatarPathDB= substr($avatarPath, 6);
         }
+        else{
+            $avatarPathDB = "forum//profilAvatar.png";
+        }
         
         $user = User::create([
             'firstname' => $request->firstname,
@@ -63,8 +66,6 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        Auth::login($user);
-
-        return redirect(RouteServiceProvider::HOME);
+        return redirect(url('/login'));
     }
 }

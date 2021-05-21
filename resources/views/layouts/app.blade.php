@@ -34,6 +34,7 @@
     @include('inc.navbar')
     <div id="app-layout" class="main-container">
         @yield('content')
+        @include('sweetalert::alert')
     </div>
     <div>
         @include('inc.footer')

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 use App\Models\User;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class NewPasswordController extends Controller
 {
@@ -51,7 +52,9 @@ class NewPasswordController extends Controller
             $status=false;
         }
 
-        
+        if($status==true){
+            Alert::success('Akun Berhasil Dipulihkan!', "Selamat, akun Anda berhasil dipulihkan! Silahkan masuk dengan kata sandi yang baru.");
+        }
 
         // If the password was successfully reset, we will redirect the user back to
         // the application's home authenticated view. If there is an error we can

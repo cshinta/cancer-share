@@ -105,8 +105,8 @@
                     <img src="{{ asset('storage' . $post->image) }}" class="gambarvideo">
                 </div>
             @endif
-            <div class="ketcerita">
-                <h6 style="font-size: 17px;">{{ $post->content }}<h6>
+            <div class="ketcerita" style="white-space: pre-line">
+                <h6 style="font-size: 17px;">{{ $post->content }}</h6>
             </div>
         </div>
     </main>

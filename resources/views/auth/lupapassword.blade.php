@@ -1,10 +1,6 @@
   @extends('layouts.auth')
 
   @section('content')
-
-      <link rel="preconnect" href="https://fonts.gstatic.com">
-      <link href="https://fonts.googleapis.com/css2?family=Signika:wght@700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <style>
           .form {
               text-align: center;
@@ -24,7 +20,7 @@
               font-size: medium;
           }
 
-          button {
+          .button-password {
               width: 33%;
               height: 48px;
               padding: 12px 20px;
@@ -51,7 +47,7 @@
           }
 
           img.avatar {
-              width: 10%;
+              width: 8%;
 
           }
 
@@ -83,7 +79,7 @@
               margin: 12px;
           }
 
-          h5 {
+          .register-text {
               text-align: center;
               font-family: 'Signika';
               font-size: 20px;
@@ -137,17 +133,19 @@
           </div>
           <h2>Lupa Kata Sandi?</h2>
           <h3>Masukkan alamat email atau no. Handphone yang sebelumnya<br> telah terdaftar pada akun.<br></h3>
-          <x-auth-validation-errors class="mb-4" :errors="$errors" />
+          <div class="validation-show" style="max-width:600px;margin:auto">
+            <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        </div>
           <div class="form">
               <form action="{{ url('/forgot-password') }}" method="POST">
                   @csrf
-                  <input type="text" placeholder="alamat email atau no. Handphone" name="email" required>
+                  <input type="text" placeholder="alamat email atau no. Handphone" name="email">
                   <div>
-                      <button type="submit">Kirim Link Pulihan</button>
+                      <button class="button-password" type="submit">Kirim Link Pulihan</button>
                   </div>
               </form>
               <div class="separator">atau</div>
           </div>
-          <h5><a href="/register">Buat Akun Baru</a></h5>
+          <h5 class="register-text"><a href="/register">Buat Akun Baru</a></h5>
       </main>
   @endsection

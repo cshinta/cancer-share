@@ -8,9 +8,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Forum;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProfileController extends Controller {
     public function update(UpdateProfileRequest $request) {
+        $request->authorize();
+
         auth()->user()->update($request->only('firstname', 'lastname', 'username', 'email', 'phone'));
 
         if($request->hasFile('avatar')) {
@@ -21,32 +24,42 @@ class ProfileController extends Controller {
             auth()->user()->update(['avatar'=>$avatarPathDB]);
         }
 
-        return back()->with('message', 'Profile saved successfully');
+        Alert::success('Profil Berhasil Diperbaharui!', 'Selamat, profil Anda telah berhasil diperbaharui.');
+
+        return redirect(url('/lihat-profil'));
     }
 
     public function updatePassword(UpdatePasswordRequest $request) {
-        auth()->user()->update(['password' => Hash::make($request->input('password'))]);
+        $request->authorize();
 
-        return back()->with('message', 'Profile saved successfully');
+        if(Hash::check($request->input('password'), Auth::user()->password)){
+            return back()->withErrors(['email' => __('passwords.user')]);
+        }
+
+        auth()->user()->update(['password' => Hash::make($request->input('password_new'))]);
+
+        Alert::success('Kata Sandi Berhasil Diperbaharui!', 'Selamat, kata sandi Anda telah berhasil diperbaharui.');
+
+        return redirect(url('/lihat-profil'));;
     }
 
-    public function getDataProfile(Request $request){
+    public function getDataProfile(){
         $user = Auth::user();
         return view('profile.suntingprofil')->with('user', $user);
     }
 
-    public function getDataPassword(Request $request){
+    public function getDataPassword(){
         $user = Auth::user();
         return view('profile.ubahpassword')->with('user', $user);
     }
 
-    public function getDashboard(Request $request){
+    public function getDashboard(){
         $user = Auth::user();
 
         return view('profile.dashboard')->with('user', $user);
     }
 
-    public function getProfilePage(Request $request){
+    public function getProfilePage(){
         $user = Auth::user();
         $posts = Forum::with('users')->where('id', $user->id)->get();
 

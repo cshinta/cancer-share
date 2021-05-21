@@ -131,44 +131,43 @@
                             <!-- First Name -->
                             <div class="col-6 name-box">
                                 <input id="firstname" class="name-input" type="text" placeholder="Nama Depan"
-                                    name="firstname" required autofocus />
+                                    name="firstname" autofocus />
                             </div>
 
                             <!-- Last Name -->
                             <div class="col-6 name-box">
                                 <input id="lastname" class="name-input" type="text" placeholder="Nama Belakang"
-                                    name="lastname" required />
+                                    name="lastname"/>
                             </div>
                         </div>
 
 
                         <!-- Userame -->
                         <div class="pb-4">
-                            <input id="username" class="notname-input" type="text" placeholder="Username" name="username"
-                                required />
+                            <input id="username" class="notname-input" type="text" placeholder="Username" name="username"/>
                         </div>
 
                         <!-- Email Address -->
                         <div class="pb-4">
                             <input id="email" class="notname-input" type="email" placeholder="Email" name="email"
-                                :value="old('email')" required />
+                                :value="old('email')"/>
                         </div>
 
                         <!-- Password -->
                         <div class="pb-4">
                             <input id="password" class="notname-input" type="password" placeholder="Kata Sandi"
-                                name="password" required autocomplete="new-password" />
+                                name="password" autocomplete="new-password" />
                         </div>
 
                         <!-- Confirm Password -->
                         <div class="pb-4">
                             <input id="password_confirmation" class="notname-input" type="password"
-                                placeholder="Konfirmasi Kata Sandi" name="password_confirmation" required />
+                                placeholder="Konfirmasi Kata Sandi" name="password_confirmation"/>
                         </div>
 
                         <!-- No-HP -->
                         <div class="pb-4">
-                            <input class="notname-input" type="text" placeholder="No. Handphone" name="phone" required/>
+                            <input class="notname-input" type="text" placeholder="No. Handphone" name="phone"/>
                         </div>
 
                     </div>

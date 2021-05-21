@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RegisteredUserController extends Controller
 {
@@ -65,6 +66,8 @@ class RegisteredUserController extends Controller
         ]);
 
         event(new Registered($user));
+
+        Alert::success('Pendaftaran Berhasil!', "Terima kasih telah mendaftar di CancerShare! Yuk, jelajahi kebutuhanmu!");
 
         return redirect(url('/login'));
     }

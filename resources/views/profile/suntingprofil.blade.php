@@ -134,20 +134,22 @@
                     </div>
 
                     <!-- Validation Errors -->
-                    <x-auth-validation-errors class="mb-4" :errors="$errors" />
+                    <div class="validation-show">
+                        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+                    </div>
 
                     <div class="user-details">
                         <div class="row pb-4">
                             <!-- First Name -->
                             <div class="col-6 name-box">
                                 <input id="firstname" class="name-input" type="text" placeholder="Nama Depan"
-                                    name="firstname" value={{ $user->firstname }} required autofocus />
+                                    name="firstname" value={{ $user->firstname }} autofocus />
                             </div>
 
                             <!-- Last Name -->
                             <div class="col-6 name-box">
                                 <input id="lastname" class="name-input" type="text" placeholder="Nama Belakang"
-                                    name="lastname" value={{ $user->lastname }} required />
+                                    name="lastname" value={{ $user->lastname }}/>
                             </div>
                         </div>
 
@@ -155,13 +157,13 @@
                         <!-- Userame -->
                         <div class="pb-4">
                             <input id="username" class="notname-input" type="text" placeholder="Username" name="username"
-                                value={{ $user->username }} required />
+                                value={{ $user->username }}/>
                         </div>
 
                         <!-- Email Address -->
                         <div class="pb-4">
                             <input id="email" class="notname-input" type="email" placeholder="Email" name="email"
-                                value={{ $user->email }} required />
+                                value={{ $user->email }}/>
                         </div>
 
                         <!-- No-HP -->

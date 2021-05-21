@@ -195,7 +195,7 @@
                 </div>
             </div>
             <div class="btn-up-loc">
-                <button class="btn-up">{{ __('Unggah') }}</button>
+                <button class="btn-up">{{ __('Simpan') }}</button>
             </div>
 
 

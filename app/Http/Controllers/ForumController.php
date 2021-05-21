@@ -6,14 +6,22 @@ use App\Models\Forum;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ForumController extends Controller
 {
     public function GetAllPosts(Request $request)
     {
-        $posts = Forum::with('users')->paginate(5);
+        $posts = Forum::paginate(5);
 
         return view('forum.index', compact('posts'));
+    }
+
+    public function GetDashboard(Request $request)
+    {
+        $posts = Forum::with('users')->get();
+
+        return view('mainpage')->with('posts', $posts);
     }
 
     public function GetPostsByFilter($filtertype, Request $request)
@@ -41,7 +49,7 @@ class ForumController extends Controller
             'title' => 'required|string',
             'content' => 'required|string',
             'type' => 'required',
-            'forum-image' => 'nullable'
+            'forum-image' => 'nullable|image|mimes:jpg,jpeg,png'
         ]);
 
         if ($request->hasFile('forum-image')) {
@@ -61,14 +69,18 @@ class ForumController extends Controller
         $post->type = $request->type;
         $post->save();
 
-        return redirect(url('/forum'))->with('success', "Post Created");
+        Alert::success('Cerita Berhasil Diunggah!', 'Terima kasih telah berbagi pengalaman kepada Kami! Ceritamu akan dapat dilihat oleh semua orang yang mengakses halaman ini. ');
+
+        return redirect(url('/forum'));
     }
 
     public function DeletePost($id)
     {
         Forum::where('postID', $id)->limit(1)->delete();
 
-        return redirect(url('/dashboard'))->with('success', "Post Deleted");
+        Alert::info('Cerita Telah Dihapus!', 'Cerita Anda telah dihapus dari halaman dan tidak dapat diakses lagi oleh pengguna lain.');
+
+        return redirect(url('/lihat-profil'))->with('success', "Post Deleted");
     }
 
     public function UpdatePost(Request $request)
@@ -94,6 +106,8 @@ class ForumController extends Controller
         if ($imagePathDB != "null") {
             $post = Forum::where('postID', $request->postID)->limit(1)->update(['image' => $imagePathDB]); 
         }
+
+        Alert::info('Cerita Berhasil Diperbaharui!', 'Cerita Anda berhasil diperbaharui.');
 
 
         return redirect(url('/forum/posts/' . $request->postID))->with('success', "Post Created");

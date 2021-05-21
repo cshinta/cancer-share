@@ -13,16 +13,14 @@
     nav {
         display:flex;
         justify-content: space-between;
-        height: 100%;
+        height: 130px;
         width:100%;
         align-items: center;
     }
     .navbarleft li{
         margin-right :10%;
     }
-    .navbarright li{
-        margin-left:8%;
-    }
+    
 
 </style>
 
@@ -34,8 +32,8 @@
         <li><a href="">Berita</a></li>
         <li><a href="">Donasi</a></li>
     </ul>
-    <ul class="navbarright">
+    <ul class="navbarright-log">
         <li><img src="{{ asset('img/profilAvatar.png') }}" class="avatar"width=15% ></li>
-        <li><a href="">Arief</a></li>
+        <li><a href="/dashboard" id="nav-foto"><b>{{Auth::user()->firstname}}</b></a></li>
     </ul>
 </nav>  

@@ -34,6 +34,7 @@
 <body>
     <div id="auth-layout" class="main-container">
         @yield('content')
+        @include('sweetalert::alert')
     </div>
     <div>
         @include('inc.footer')

@@ -21,19 +21,24 @@
             margin-right:4.4%;
             margin-left:4.4%;
             border-radius:45px;
-            margin-bottom:120px;
+            margin-bottom:40px;
             border: 2px solid #033D68;
         }
         .accordion-button{
             background-color:#033D68;
             color:white;
-            font-size:48px;
+            font-size:35px;
             text-align:left;
+            width:100%;
+            border-radius:45px 45px 45px 45px ;
+            height:100%;
+            padding: 2% 3%;
+            font-weight: bold;
         }
         .accordion-body{
             text-align:justify;
             margin:20px 2% 20px 2%;
-            font-size:24px;
+            font-size:18px;
             border-color:#033D68;
         }
         .accordion-item{
@@ -50,19 +55,45 @@
         .btn-next:hover{
             background-color:rgb(22, 15, 71);
         }
-        #content{
-            border:1px solid #000;
-        }
         .titlebox{
             float:left;
             padding:0 5px;
             margin:-25px 0 0 50%;
             background:#fff;
         }
+        .down-symbol{
+            margin-right: 3%;
+        }
+        .separator {
+              padding-top: 2%;
+              display: flex;
+              align-items: center;
+              text-align: center;
+              color: black;
+              font-size: 30px;
+              font-weight: bold;
+          }
+
+          .separator::before,
+          .separator::after {
+              content: '';
+              flex: 1;
+              border-bottom: 1px solid #B5B2B2;
+          }
+          .separator:not(:empty)::before {
+              margin-right: 1em;
+          }
+
+          .separator:not(:empty)::after {
+              margin-left: 1em;
+          }
+          .col-4{
+              margin: 0;
+          }
     </style>
     <main>
-    <div class="row">
-        <div class="col-6"style="padding-left:80px;margin-bottom:78px;">
+    <div class="row" style="margin-bottom: 3%;">
+        <div class="col-6"style="padding-left:4.4%;margin-bottom:78px;">
             <div class="judul">Kanker Paru-Paru</div>
             <div class="rectangle"></div>
             <div class="isi"style="margin-top:48px;text-align:justify;margin-right:5%;">
@@ -76,13 +107,13 @@
                 </p>
             </div>
         </div>
-        <div class="col-6"style="margin-top:20px;"><img src="{{ asset('img/edukasiParu.png') }}" style="width:650px;height:500px;"></div>
+        <div class="col-6"style="margin-top:20px; text-align: right; padding-right: 4.4%;"><img src="{{ asset('img/edukasiParu.png') }}" style="width:650px;height:500px;"></div>
     </div>
-    <div class="accordion" id="accordionPanelsStayOpenExample">
+    <div class="accordion" id="accordionPanelsStayOpenExample" style="border-color: transparent;">
         <div class="accordion-item">
             <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne"style="width:100%;border-radius:45px 45px 0px 0px ;height:100%;">
-                Gejala
+            <button class="accordion-button button-edukasi" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                <i class="fas fa-chevron-down down-symbol"></i> Gejala
             </button>
             </h2>
             <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
@@ -111,8 +142,8 @@
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo"style="width:100%;height:100%;">
-                Penyebab
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                <i class="fas fa-chevron-down down-symbol"></i>Penyebab
             </button>
             </h2>
             <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
@@ -136,8 +167,8 @@
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree"style="width:100%;height:100%;">
-                Pencegahan
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                <i class="fas fa-chevron-down down-symbol"></i>Pencegahan
             </button>
             </h2>
             <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
@@ -154,8 +185,8 @@
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="panelsStayOpen-headingFour">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree"style="width:100%;border-radius:0px 0px 45px 45px ;height:100%;">
-                Pengobatan
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                <i class="fas fa-chevron-down down-symbol"></i>Pengobatan
             </button>
             </h2>
             <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
@@ -171,20 +202,20 @@
         </div>
     </div>
     <div id="content"style="margin-top:10px;margin-bottom:5px;">
-            <div class="titlebox"style="font-size:36px;">Lihat Edukasi Lainnya</div>
+        <div class="separator">Lihat Edukasi Lainnya</div>
     </div>
-    <div class="row"style="margin:100px 10% 100px 9%;">
-        <div class="col-4"style="text-align:right;">
+    <div class="row"style="margin:30px 10% 100px 9%;">
+        <div class="col-4" style="text-align: right;">
             <div class="btn">
                 <a href="#" class="btn btn-primary btn-next">Kanker Hati</a>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-4" style="text-align: center;">
             <div class="btn">
                 <a href="#" class="btn btn-primary btn-next">Kanker Darah</a>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-4" style="text-align: left;">
             <div class="btn" >
                 <a href="#" class="btn btn-primary btn-next">Kanker Usus Besar</a>
             </div>

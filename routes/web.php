@@ -20,9 +20,7 @@ use App\Http\Controllers\ReportController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ForumController::class,'getDashboard']);
 
 Route::get('/login', function () {
     return view('auth.login');
@@ -36,43 +34,39 @@ Route::get('/forgot-password', function () {
 
 Route::post('/forgot-password', [PasswordResetLinkController::class, 'store']);
 
-Route::get('/dashboard', [ProfileController::class,'getDashboard']);
-
-// Route::get('/mail', function () {
-//     return view('page.mail');
-// });
+Route::get('/dashboard', [ProfileController::class,'getDashboard'])->middleware(['auth']);
 
 Route::get('/forum', function () {
     return view('forum.index');
 });
+
 Route::get('/donasi', function () {
     return view('page.donasi');
 });
-Route::get('/home', function () {
-    return view('mainpage');
-});
+
 Route::get('/edukasi', function () {
     return view('page.edukasi');
 });
+
 Route::get('/berita', function () {
     return view('page.berita');
 });
+
 Route::get('/berita-lengkap', function () {
     return view('page.beritalengkap');
 });
+
 Route::get('/reset-password', [NewPasswordController::class,'getDataUser']);
 
 Route::get('/forum', [ForumController::class,'getAllPosts']);
 
 Route::get('/forum/filter/{filtertype}', [ForumController::class,'GetPostsByFilter']);
 
-Route::get('/reset-password', [NewPasswordController::class,'getDataUser']);
-
 Route::post('/reset-password',  [NewPasswordController::class,'store']);
 
-Route::get('/change-password',  [ProfileController::class,'getDataPassword']);
+Route::get('/change-password',  [ProfileController::class,'getDataPassword'])->middleware(['auth']);
 
-Route::post('/change-password',  [ProfileController::class,'updatePassword']);
+Route::post('/change-password',  [ProfileController::class,'updatePassword'])->middleware(['auth']);
 
 Route::get('/register', function () {
     return view('auth.register');
@@ -80,16 +74,15 @@ Route::get('/register', function () {
 
 Route::post('/register', [RegisteredUserController::class,'store']);
 
+Route::get('/sunting-profil', [ProfileController::class,'getDataProfile'])->middleware(['auth']);
 
-Route::get('/sunting-profil', [ProfileController::class,'getDataProfile']);
+Route::post('/sunting-profil', [ProfileController::class,'update'])->middleware(['auth']);
 
-Route::post('/sunting-profil', [ProfileController::class,'update']);
-
-Route::get('/lihat-profil', [ProfileController::class,'getProfilePage']);
+Route::get('/lihat-profil', [ProfileController::class,'getProfilePage'])->middleware(['auth']);
 
 Route::get('/forum/posts/{id}', [ForumController::class,'getPostByID']);
 
-Route::get('/logout', [AuthenticatedSessionController::class, 'destroy']);
+Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])->middleware(['auth']);
 
 Route::get('/tentang-kami', function () {
     return view('page.tentangkami');
@@ -97,18 +90,18 @@ Route::get('/tentang-kami', function () {
 
 Route::get('/upload-forum', function () {
     return view('forum.upload');
-});
+})->middleware(['auth']);
 
-Route::get('/edit-forum/{id}', [ForumController::class,'UpdateView']);
+Route::get('/edit-forum/{id}', [ForumController::class,'UpdateView'])->middleware(['auth']);
 
-Route::post('/edit-forum', [ForumController::class,'UpdatePost']);
+Route::post('/edit-forum', [ForumController::class,'UpdatePost'])->middleware(['auth']);
 
-Route::get('/delete/{postID}', [ForumController::class,'DeletePost']);
+Route::get('/delete/{postID}', [ForumController::class,'DeletePost'])->middleware(['auth']);
 
-Route::post('/upload-forum', [ForumController::class,'CreatePost']);
+Route::post('/upload-forum', [ForumController::class,'CreatePost'])->middleware(['auth']);
 
-Route::get('/report/{postID}', [ReportController::class,'showReport']);
+Route::get('/report/{postID}', [ReportController::class,'showReport'])->middleware(['auth']);
 
-Route::post('/report', [ReportController::class,'createReport']);
+Route::post('/report', [ReportController::class,'createReport'])->middleware(['auth']);
 
 require __DIR__ . '/auth.php';

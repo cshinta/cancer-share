@@ -9,7 +9,6 @@
               width: 100%;
               margin-bottom: 15px;
               background: #98B1C4
-
           }
 
           .icon {
@@ -25,7 +24,7 @@
               padding: 10px;
               outline: none;
               font-size: medium;
-              
+
 
           }
 
@@ -68,7 +67,7 @@
               color: black;
           }
 
-          a{
+          a {
               text-decoration: none;
               color: black;
           }
@@ -84,8 +83,11 @@
               <img src="{{ asset('img/logo.png') }}" class="avatar">
           </div>
           <div class="main">
+              <div class="validation-show" style="max-width:500px;margin:auto">
+                  <x-auth-validation-errors class="mb-4" :errors="$errors" />
+              </div>
               <form method="POST" action="{{ url('/login') }}" style="max-width:500px;margin:auto">
-                @csrf
+                  @csrf
                   <div class="input-container">
                       <i class="fa fa-user icon"></i>
                       <input class="input-field" type="text" placeholder="Username" name="username">

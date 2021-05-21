@@ -6,22 +6,24 @@
         flex-direction: column;
         width: 100%;
     }
+
 </style>
 
 @if ($errors->any())
-    <div class="error-message" {{ $attributes }}>
-        <div class="row m-0">
-            <div class="font-medium text-red-600">
-                {{ __('Ada sesuatu yang salah.') }}
-            </div>
-        </div>
-        <div class="row m-0">
-            <ul class="list-disc list-inside text-sm text-red-600">
-                @foreach ($errors->all() as $error)
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <h5 class="alert-heading"><b>Mohon periksa lagi data yang Anda masukkan!</b></h5>
+        <ul class="list-disc list-inside text-sm text-red-600">
+            @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-
+            @endforeach
+        </ul>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
 @endif
+
+<script>
+    $('.alert').alert()
+
+</script>

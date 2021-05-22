@@ -207,17 +207,17 @@
     <div class="row"style="margin:30px 10% 100px 9%;">
         <div class="col-4" style="text-align: right;">
             <div class="btn">
-                <a href="#" class="btn btn-primary btn-next">Kanker Hati</a>
+                <a href="/edukasi/kankerhati" class="btn btn-primary btn-next">Kanker Hati</a>
             </div>
         </div>
         <div class="col-4" style="text-align: center;">
             <div class="btn">
-                <a href="#" class="btn btn-primary btn-next">Kanker Darah</a>
+                <a href="/edukasi/kankerdarah" class="btn btn-primary btn-next">Kanker Darah</a>
             </div>
         </div>
         <div class="col-4" style="text-align: left;">
             <div class="btn" >
-                <a href="#" class="btn btn-primary btn-next">Kanker Usus Besar</a>
+                <a href="/edukasi/kankerusus" class="btn btn-primary btn-next">Kanker Usus Besar</a>
             </div>
         </div>
     </div>

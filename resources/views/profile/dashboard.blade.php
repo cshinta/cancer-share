@@ -110,9 +110,9 @@
                     <nav>
                         <ul>
                             <li><a href="{{url('/')}}" class="current">HOME</a></li>
-                            <li><a href="">BERITA</a></li>
+                            <li><a href="{{url('/berita')}}">BERITA</a></li>
                             <li><a href="{{url('/forum')}}">FORUM</a></li>
-                            <li><a href="">DONASI</a></li>
+                            <li><a href="{{url('/donasi')}}">DONASI</a></li>
                         </ul>
                     </nav>
                 </div>

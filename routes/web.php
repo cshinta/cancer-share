@@ -44,8 +44,17 @@ Route::get('/donasi', function () {
     return view('page.donasi');
 });
 
-Route::get('/edukasi', function () {
-    return view('page.edukasi');
+Route::get('/edukasi/kankerparu', function () {
+    return view('page.kankerparu');
+});
+Route::get('/edukasi/kankerhati', function () {
+    return view('page.kankerhati');
+});
+Route::get('/edukasi/kankerdarah', function () {
+    return view('page.kankerdarah');
+});
+Route::get('/edukasi/kankerusus', function () {
+    return view('page.kankerusus');
 });
 
 Route::get('/berita', function () {

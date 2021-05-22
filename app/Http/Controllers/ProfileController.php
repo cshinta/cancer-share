@@ -10,18 +10,20 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\Forum;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class ProfileController extends Controller {
-    public function update(UpdateProfileRequest $request) {
+class ProfileController extends Controller
+{
+    public function update(UpdateProfileRequest $request)
+    {
         $request->authorize();
 
         auth()->user()->update($request->only('firstname', 'lastname', 'username', 'email', 'phone'));
 
-        if($request->hasFile('avatar')) {
+        if ($request->hasFile('avatar')) {
             $image = $request->file('avatar');
-            $imageName = $request['username'];  
-            $avatarPath = $image->storeAs('public/avatars/', $imageName.'.jpeg');
-            $avatarPathDB= substr($avatarPath, 6);
-            auth()->user()->update(['avatar'=>$avatarPathDB]);
+            $imageName = $request['username'];
+            $avatarPath = $image->storeAs('public/avatars/', $imageName . '.jpeg');
+            $avatarPathDB = substr($avatarPath, 6);
+            auth()->user()->update(['avatar' => $avatarPathDB]);
         }
 
         Alert::success('Profil Berhasil Diperbaharui!', 'Selamat, profil Anda telah berhasil diperbaharui.');
@@ -29,41 +31,46 @@ class ProfileController extends Controller {
         return redirect(url('/lihat-profil'));
     }
 
-    public function updatePassword(UpdatePasswordRequest $request) {
+    public function updatePassword(UpdatePasswordRequest $request)
+    {
         $request->authorize();
 
-        if(Hash::check($request->input('password'), Auth::user()->password)){
-            return back()->withErrors(['email' => __('passwords.user')]);
+
+
+        if (Hash::check($request->input('password'), Auth::user()->password)) {
+            auth()->user()->update(['password' => Hash::make($request->input('password_new'))]);
+            Alert::success('Kata Sandi Berhasil Diperbaharui!', 'Selamat, kata sandi Anda telah berhasil diperbaharui.');
+
+            return redirect(url('/lihat-profil'));;
         }
 
-        auth()->user()->update(['password' => Hash::make($request->input('password_new'))]);
-
-        Alert::success('Kata Sandi Berhasil Diperbaharui!', 'Selamat, kata sandi Anda telah berhasil diperbaharui.');
-
-        return redirect(url('/lihat-profil'));;
+        return back()->withErrors(['email' => __('passwords.pw_baru')]);
     }
 
-    public function getDataProfile(){
+    public function getDataProfile()
+    {
         $user = Auth::user();
         return view('profile.suntingprofil')->with('user', $user);
     }
 
-    public function getDataPassword(){
+    public function getDataPassword()
+    {
         $user = Auth::user();
         return view('profile.ubahpassword')->with('user', $user);
     }
 
-    public function getDashboard(){
+    public function getDashboard()
+    {
         $user = Auth::user();
 
         return view('profile.dashboard')->with('user', $user);
     }
 
-    public function getProfilePage(){
+    public function getProfilePage()
+    {
         $user = Auth::user();
         $posts = Forum::with('users')->where('id', $user->id)->get();
 
         return view('profile.lihatprofil')->with('posts', $posts)->with('user', $user);
     }
-
 }

@@ -17,6 +17,7 @@ return [
     'sent' => 'Kami telah mengirim tautan ke email Anda untuk mengubah kata sandi akun Anda!',
     'throttled' => 'Mohon tunggu sebelum mencoba lagi.',
     'token' => 'Token untuk mengubah kata sandi tidak valid.',
-    'user' => "Email yang Anda masukkan bukan milik akun tertentu.",
+    'user' => 'Email yang Anda masukkan bukan milik akun tertentu.',
+    'pw_baru' => 'Password yang Anda masukkan salah.'
 
 ];

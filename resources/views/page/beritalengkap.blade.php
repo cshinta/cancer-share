@@ -24,6 +24,10 @@
     li{
         display: inline;
     }
+    .backberita{
+        margin-left:2%;
+        margin-top:20px;
+    }
     </style>
     <main>
     <div class="row">
@@ -47,7 +51,9 @@
         </ul>
         
     </div>
-    <p style="margin:60px 0 20px 2%;font-size:30px;font-weight:bold;"><img src="{{ asset('img/back.png') }}">Laman Sebelumnya</p>
+    <div class="backberita">
+            <h1 ><b><a class="" href="/berita" style="font-size: 30px;font-weight:bold; color:black;"><img src="{{ asset('img/back.png') }}" >{{ __(' Laman Sebelumnya') }}</a></b></h1>
+    </div>
     </main>  
 
 @endsection

@@ -127,7 +127,7 @@
 
     <main>
         <div class="backforum">
-            <h1><b><a class="" href="" style="font-size: 25px;">{{ __('< Kembali') }}</a></b></h1>
+            <h1><b><a class="" href="/forum" style="font-size: 25px;">{{ __('< Kembali') }}</a></b></h1>
         </div>
 
         <form method="POST" action="{{url('/report')}}">

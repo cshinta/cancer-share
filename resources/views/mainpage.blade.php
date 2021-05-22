@@ -493,7 +493,7 @@
                         </a>
                     </div>
                     <div class="btn-to-forum">
-                        <a href="#" class="btn btn-primary btn-to-forum-next">PERGI KE FORUM</a>
+                        <a href="/forum" class="btn btn-primary btn-to-forum-next">PERGI KE FORUM</a>
                     </div>
                 </div>
             </div>
@@ -519,6 +519,14 @@
                                     <img src="{{ asset('img/berita.png') }}" class="d-block w-100" alt="...">
                                 </div>
                             </div>
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
                         </div>
                     </div>
 
@@ -539,7 +547,7 @@
                         <div class="btn-lihat-lengkap"
                             style="margin-top:23px;font-size:18px;color:white;background-color:#033D68;">
                             LIHAT BERITA LAINNYA
-                            <a href="#" class="btn btn-primary btn-lihat-lengkap-next ">></a>
+                            <a href="/berita" class="btn btn-primary btn-lihat-lengkap-next ">></a>
                         </div>
                         <p style="margin-top:30%;color:white;font-weight:bold;">KOMPAS.COM</p>
                     </div>
@@ -560,7 +568,7 @@
                 </div>
                 <div class="btn-donasi" style="margin-top:30px;margin-bottom:200px;font-size:30px;font-weight:bold;">
                     DONASI SEKARANG
-                    <a href="#" class="btn btn-primary btn-donasi-next ">></a>
+                    <a href="/donasi" class="btn btn-primary btn-donasi-next ">></a>
                 </div>
             </section>
     </main>

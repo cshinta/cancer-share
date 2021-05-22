@@ -91,10 +91,10 @@
 <nav id="navbar-page">
     <ul class="navbarleft">
         <li><a href="/"><img src="{{ asset('img/logo.png') }}" width=15%></a></li>
-        <li><a href="">Edukasi</a></li>
+        <li><a href="/edukasi">Edukasi</a></li>
         <li><a href="/forum">Forum</a></li>
-        <li><a href="">Berita</a></li>
-        <li><a href="">Donasi</a></li>
+        <li><a href="/berita">Berita</a></li>
+        <li><a href="/donasi">Donasi</a></li>
     </ul>
     @if (Auth::check())
         <ul class="navbarright-log">

@@ -1,5 +1,5 @@
 @section('content')
-@extends('layouts.auth')
+@extends('layouts.app')
 <style>
 .container-fluid {
         display: flex;
@@ -135,10 +135,10 @@
                         </div>
                         <div class="ketsilvy">
                             <h4><b>Silvy Zafira Putri</b></h4>
-                        <h5>19515020111102</h5>
+                        <h5>195150201111021</h5>
                                 <div class="quote">
                                 <h5 style=" font-size:15px;"> Semoga dengan dikembangkannya web ini dapat
-                                 mengringankan sedikit cobaan hidup pejuang kanker karena disini dapat
+                                 meringankan sedikit cobaan hidup pejuang kanker karena disini dapat
                                  saling menceritakan pengalaman selama hidupnya berjuang melawan penyakit yang luar biasa ini
                                  dan semoga manusia hebat yang sama sedang berjuang untuk hidupnya dapat termotivasi dan saling 
                                  memberikan dukungan juga kepada para pejuang kanker yang ada di luar sana.</h5>

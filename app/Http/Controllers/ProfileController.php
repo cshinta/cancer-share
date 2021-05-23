@@ -35,8 +35,6 @@ class ProfileController extends Controller
     {
         $request->authorize();
 
-
-
         if (Hash::check($request->input('password'), Auth::user()->password)) {
             auth()->user()->update(['password' => Hash::make($request->input('password_new'))]);
             Alert::success('Kata Sandi Berhasil Diperbaharui!', 'Selamat, kata sandi Anda telah berhasil diperbaharui.');
@@ -69,7 +67,7 @@ class ProfileController extends Controller
     public function getProfilePage()
     {
         $user = Auth::user();
-        $posts = Forum::with('users')->where('id', $user->id)->get();
+        $posts = Forum::orderBy('created_at', 'DESC')->where('id', $user->id)->get();
 
         return view('profile.lihatprofil')->with('posts', $posts)->with('user', $user);
     }

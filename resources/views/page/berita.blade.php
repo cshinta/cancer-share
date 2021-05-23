@@ -255,8 +255,6 @@
                             <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
                                 type="button" role="tab" aria-controls="nav-profile" aria-selected="false">HOT
                                 TOPIC</button>
-                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
-                                type="button" role="tab" aria-controls="nav-contact" aria-selected="false">TRENDING</button>
                         </div>
                         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel"

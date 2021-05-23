@@ -18,7 +18,8 @@ class CreateForumsTable extends Migration
             $table->string('image');
             $table->string('title');
             $table->text('content');
-            $table->foreignId('id')->constrained('users');
+            $table->unsignedBigInteger('id');
+            $table->foreign('id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('type');
             $table->timestamps();
         });

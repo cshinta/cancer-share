@@ -149,21 +149,21 @@
                             <!-- Last Name -->
                             <div class="col-6 name-box">
                                 <input id="lastname" class="name-input" type="text" placeholder="Nama Belakang"
-                                    name="lastname" value={{ $user->lastname }}/>
+                                    name="lastname" value={{ $user->lastname}} >
                             </div>
                         </div>
 
 
-                        <!-- Userame -->
+                        <!-- UserName -->
                         <div class="pb-4">
                             <input id="username" class="notname-input" type="text" placeholder="Username" name="username"
-                                value={{ $user->username }}/>
+                                value={{ $user->username }} />
                         </div>
 
                         <!-- Email Address -->
                         <div class="pb-4">
                             <input id="email" class="notname-input" type="email" placeholder="Email" name="email"
-                                value={{ $user->email }}/>
+                                value={{ $user->email }} />
                         </div>
 
                         <!-- No-HP -->

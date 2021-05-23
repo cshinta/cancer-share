@@ -24,21 +24,17 @@ Route::get('/', [ForumController::class,'getDashboard']);
 
 Route::get('/login', function () {
     return view('auth.login');
-});
+})->middleware('guest');
 
-Route::post('/login', [AuthenticatedSessionController::class, 'store']);
+Route::post('/login', [AuthenticatedSessionController::class, 'store'])->middleware('guest');
 
 Route::get('/forgot-password', function () {
     return view('auth.lupapassword');
-});
+})->middleware('guest');
 
-Route::post('/forgot-password', [PasswordResetLinkController::class, 'store']);
+Route::post('/forgot-password', [PasswordResetLinkController::class, 'store'])->middleware('guest');
 
 Route::get('/dashboard', [ProfileController::class,'getDashboard'])->middleware(['auth']);
-
-Route::get('/forum', function () {
-    return view('forum.index');
-});
 
 Route::get('/donasi', function () {
     return view('page.donasi');
@@ -65,13 +61,14 @@ Route::get('/berita-lengkap', function () {
     return view('page.beritalengkap');
 });
 
-Route::get('/reset-password', [NewPasswordController::class,'getDataUser']);
+Route::get('/reset-password', [NewPasswordController::class,'getDataUser'])->middleware('guest');
+
+Route::post('/reset-password',  [NewPasswordController::class,'store'])->middleware('guest');
 
 Route::get('/forum', [ForumController::class,'getAllPosts']);
 
 Route::get('/forum/filter/{filtertype}', [ForumController::class,'GetPostsByFilter']);
 
-Route::post('/reset-password',  [NewPasswordController::class,'store']);
 
 Route::get('/change-password',  [ProfileController::class,'getDataPassword'])->middleware(['auth']);
 
@@ -79,9 +76,9 @@ Route::post('/change-password',  [ProfileController::class,'updatePassword'])->m
 
 Route::get('/register', function () {
     return view('auth.register');
-});
+})->middleware('guest');
 
-Route::post('/register', [RegisteredUserController::class,'store']);
+Route::post('/register', [RegisteredUserController::class,'store'])->middleware('guest');
 
 Route::get('/sunting-profil', [ProfileController::class,'getDataProfile'])->middleware(['auth']);
 
@@ -90,6 +87,8 @@ Route::post('/sunting-profil', [ProfileController::class,'update'])->middleware(
 Route::get('/lihat-profil', [ProfileController::class,'getProfilePage'])->middleware(['auth']);
 
 Route::get('/forum/posts/{id}', [ForumController::class,'getPostByID']);
+
+Route::get('/forum/my/posts/{id}', [ForumController::class,'getMyPostByID'])->middleware(['auth']);
 
 Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])->middleware(['auth']);
 

@@ -15,8 +15,8 @@
         .hal1-section {
             display: flex;
             align-items: center;
-            max-width: 60%;
-            margin: 0 10%;
+            max-width: 63vw;
+            margin: 0 5%;
             min-height: calc(100vh - 130px);
             text-align: justify;
         }
@@ -108,7 +108,6 @@
         .judulisi {
             text-align: center;
             font-size: 30px;
-            margin: 0 0 2% 0;
         }
 
         .judul-edukasi {
@@ -118,14 +117,14 @@
 
         .card-edukasi {
             text-align: justify;
-            margin: 0 5%;
+            margin: 0 2%;
 
         }
 
         .card-edukasi-content {
             padding: 5%;
-            width: 22rem;
-            height: 27rem;
+            width: 20vw;
+            height: 60vh;
             display: flex;
             flex-flow: column;
         }
@@ -216,7 +215,7 @@
             text-align: right;
             border-radius: 70px;
             border: 2px solid white;
-            margin-left: 50%;
+            margin-left: 35%;
         }
 
         .btn-lihat-lengkap a {
@@ -237,7 +236,6 @@
 
         .card-news {
             background-color: #033D68;
-            margin-right: 50px;
             padding: 5px 0px 5px 10px;
         }
 
@@ -269,6 +267,7 @@
         .card-forum-main {
             width: 18rem;
             height: 35rem;
+            margin-right: 0;
         }
 
         .card-body-forum {
@@ -296,7 +295,7 @@
     <main>
         <section class="hal1">
             <div class="row hal1-section">
-                <div class="col-8" style="padding-left:80px;">
+                <div class="col-8" style="padding-left:5%;">
                     <div class="judul"><b>CANCER SUFFERER'S PLACE TO SHARE</b></div>
                     <div class="rectangle"></div>
                     <div class="isi">
@@ -318,7 +317,7 @@
                 </div>
             </div>
         </section>
-        <section class="hal2">
+        <section class="hal2" id="edukasi-main">
             <div class="tengah">
                 <img style="width:100%;" src="{{ asset('img/Polygon 3.png') }}">
                 <div class="judul2">EDUKASI</div>
@@ -345,7 +344,7 @@
                                     paling banyak terjadi di Indonesia.</p>
                             </div>
                             <div class="btn-lengkap">
-                                <a href="#" class="btn btn-primary btn-lengkap-next rounded-pill">Pelajari
+                                <a href="/edukasi/kankerparu" class="btn btn-primary btn-lengkap-next rounded-pill">Pelajari
                                     Selengkapnya</a>
                             </div>
                         </div>
@@ -364,7 +363,7 @@
                                     dalam hati bermutasi dan membentuk tumor.</p>
                             </div>
                             <div class="btn-lengkap">
-                                <a href="#" class="btn btn-primary btn-lengkap-next rounded-pill">Pelajari
+                                <a href="/edukasi/kankerhati" class="btn btn-primary btn-lengkap-next rounded-pill">Pelajari
                                     Selengkapnya</a>
                             </div>
                         </div>
@@ -383,7 +382,7 @@
                                     sel darah diproduksi.</p>
                             </div>
                             <div class="btn-lengkap">
-                                <a href="#" class="btn btn-primary btn-lengkap-next rounded-pill">Pelajari
+                                <a href="/edukasi/kankerdarah" class="btn btn-primary btn-lengkap-next rounded-pill">Pelajari
                                     Selengkapnya</a>
                             </div>
                         </div>
@@ -402,7 +401,7 @@
                                 </p>
                             </div>
                             <div class="btn-lengkap">
-                                <a href="#" class="btn btn-primary btn-lengkap-next rounded-pill">Pelajari
+                                <a href="/edukasi/kankerusus" class="btn btn-primary btn-lengkap-next rounded-pill">Pelajari
                                     Selengkapnya</a>
                             </div>
                         </div>
@@ -426,8 +425,8 @@
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <div class="row" style="margin-left:150px;">
-                                @for ($i = 0; $i < $posts->count(); $i++)
+                            <div class="row" style="margin: 0 3% 0 13%;">
+                                @for ($i = 0; $i < 3; $i++)
                                     <div class="col-sm">
                                         <div class="card card-forum-main">
                                             <div class="img-card-forum">
@@ -455,8 +454,8 @@
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <div class="row" style="margin-left:150px;">
-                                @for ($i = 0; $i < $posts->count(); $i++)
+                            <div class="row" style="margin: 0 3% 0 13%;">
+                                @for ($i = 3; $i < 6; $i++)
                                     <div class="col-sm">
                                         <div class="card card-forum-main">
                                             <div class="img-card-forum">

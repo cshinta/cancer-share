@@ -15,7 +15,7 @@ class AddMoreFieldsToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->renameColumn('name', 'firstname');
-            $table->string('lastname');
+            $table->string('lastname')->nullable();
             $table->string('username');
             $table->string('avatar')->nullable();
         });

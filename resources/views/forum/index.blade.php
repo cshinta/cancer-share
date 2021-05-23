@@ -50,12 +50,14 @@
             </div>
             <div class="empty-forum">
                 <h3>Belum ada pengalaman yang diunggah.</h3>
-                <div class="share-empty">
-                    <div class="add-button-empty"><i class="fas fa-plus" id="add-icon"></i></div>
-                    <div class="empty-text">
-                        <h3><b>Bagi Pengalaman?</b></h3>
+                <a href="/upload-forum">
+                    <div class="share-empty">
+                        <div class="add-button-empty"><i class="fas fa-plus" id="add-icon"></i></div>
+                        <div class="empty-text">
+                            <h3><b>Bagi Pengalaman?</b></h3>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         @else
             <div class="container-fluid" id="header-forum">

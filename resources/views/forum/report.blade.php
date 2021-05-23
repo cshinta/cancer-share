@@ -122,6 +122,9 @@
             margin-left: 60px;
             margin-top: 40px;
         }
+        .validation-show{
+            margin: 0 50px;
+        }
 
     </style>
 
@@ -129,7 +132,9 @@
         <div class="backforum">
             <h1><b><a class="" href="/forum" style="font-size: 25px;">{{ __('< Kembali') }}</a></b></h1>
         </div>
-
+        <div class="validation-show">
+            <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        </div>
         <form method="POST" action="{{url('/report')}}">
             @csrf
             <div class="jenis-laporan">

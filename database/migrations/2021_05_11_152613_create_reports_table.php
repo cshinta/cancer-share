@@ -15,8 +15,10 @@ class CreateReportsTable extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->id('reportID');
-            $table->foreignId('postID')->constrained('forum');
-            $table->foreignId('id')->constrained('users');
+            $table->unsignedBigInteger('postID');
+            $table->unsignedBigInteger('id');
+            $table->foreign('postID')->references('postID')->on('forum')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->text('content');
             $table->integer('type');
             $table->timestamps();

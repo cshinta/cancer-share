@@ -9,6 +9,7 @@ use App\Mail\PasswordMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Auth\PasswordBroker as PasswordBrokerContract;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PasswordResetLinkController extends Controller
 {
@@ -41,9 +42,12 @@ class PasswordResetLinkController extends Controller
             Mail::to($request->email)->send(new PasswordMail($details));
             $status=true;
             $request->session()->put('email', $request->input('email'));
+            Alert::info('Email pemulihan telah dikirim.', ' Mohon cek pesan masuk Email Anda.');
+            
         }
         catch(\Exception $e){
             $status=false;
+            Alert::warning("Terjadi Kesalahan pada Sistem", 'Mohon mencoba lagi dalam beberapa menit.');
         }
 
         return back();

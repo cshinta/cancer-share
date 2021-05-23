@@ -148,7 +148,10 @@
             margin-top: 30px;
             margin-bottom: 50px;
         }
-
+        .validation-show{
+            margin-left: 50px;
+            margin-right: 65px;
+        }
     </style>
 
     <main>
@@ -159,8 +162,11 @@
         <div class="judul">
             <h1 class="title"><b>Yuk, bagikan kisahmu!</b></h1>
         </div>
-
-        <form method="POST" action="{{url("/upload-forum")}}" enctype="multipart/form-data">
+        <!-- Validation Errors -->
+        <div class="validation-show">
+            <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        </div>
+        <form method="POST" action="{{ url('/upload-forum') }}" enctype="multipart/form-data">
             @csrf
             <div class="upload">
                 <!-- up-->
@@ -177,8 +183,8 @@
                 </div>
 
                 <div class="custom-select" style="width:400px;height: 53px; background: #EFEDED;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;">
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;">
                     <select name="type">
                         <option value="0">Jenis Kanker</option>
                         <option value="1">Kanker Paru-Paru</option>
@@ -196,7 +202,8 @@
 
                     <!-- storynya bund -->
                     <div class="pb-4">
-                        <textarea class="form-control notname-input" rows="5" placeholder="Ceritakan Kisahmu" id="story" name="content"></textarea>
+                        <textarea class="form-control notname-input" rows="5" placeholder="Ceritakan Kisahmu" id="story"
+                            name="content"></textarea>
                     </div>
                 </div>
                 <div class="btn-up-loc">

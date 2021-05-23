@@ -72,7 +72,7 @@
 
     <main>
         <div class="backprofil">
-            <h1><b><a class="" href="/forum" style="font-size: 24px;">{{ __('< Kembali ke Forum') }}</a></b></h1>
+            <h1><b><a class="" href="/lihat-profil" style="font-size: 24px;">{{ __('< Kembali ke Profil') }}</a></b></h1>
         </div>
 
         <div class="detail-forum">

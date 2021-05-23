@@ -123,7 +123,11 @@ return [
         "email" => "Email",
         "password" => "Kata Sandi",
         'avatar' => 'Avatar',
-        "password_new" => "Kata Sandi Baru"
+        "password_new" => "Kata Sandi Baru",
+        "title" => "Judul",
+        "content" => "Field yang kosong",
+        "forum-image" => "Gambar",
+        "type" => "Jenis"
     ],
 
 ];

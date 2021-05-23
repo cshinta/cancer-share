@@ -38,7 +38,7 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'firstname' => 'required|string|max:255',
-            'lastname' => 'required|string|max:255',
+            'lastname' => 'nullable|string|max:255',
             'username' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|confirmed|min:8',
@@ -52,7 +52,7 @@ class RegisteredUserController extends Controller
             $avatarPathDB= substr($avatarPath, 6);
         }
         else{
-            $avatarPathDB = "forum//profilAvatar.png";
+            $avatarPathDB = "/avatars//profilAvatar.png";
         }
         
         $user = User::create([

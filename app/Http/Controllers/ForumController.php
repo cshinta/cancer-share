@@ -12,21 +12,21 @@ class ForumController extends Controller
 {
     public function GetAllPosts(Request $request)
     {
-        $posts = Forum::paginate(5);
+        $posts = Forum::orderBy('created_at', 'DESC')->paginate(5);
 
         return view('forum.index', compact('posts'));
     }
 
     public function GetDashboard(Request $request)
     {
-        $posts = Forum::with('users')->get();
+        $posts = Forum::orderBy('created_at', 'DESC')->get();
 
         return view('mainpage')->with('posts', $posts);
     }
 
     public function GetPostsByFilter($filtertype, Request $request)
     {
-        $posts = Forum::with('users')->where('type', $filtertype)->paginate(5);
+        $posts = Forum::orderBy('created_at', 'DESC')->where('type', $filtertype)->paginate(5);
 
         return view('forum.index', compact('posts'));
     }
@@ -43,12 +43,24 @@ class ForumController extends Controller
         return view('forum.bacaselengkapnya')->with('post', $post)->with('id', $isUser);
     }
 
+    public function GetMyPostByID($id, Request $request)
+    {
+        $post = Forum::with('users')->where('postID', $id)->first();
+        try {
+            $isUser = $request->user()->id;
+        } catch (\Exception $e) {
+            $isUser = 0;
+        }
+
+        return view('forum.bacaselengkapnyaprofil')->with('post', $post)->with('id', $isUser);
+    }
+
     public function CreatePost(Request $request)
     {
         $request->validate([
             'title' => 'required|string',
             'content' => 'required|string',
-            'type' => 'required',
+            'type' => 'required|not_in:0',
             'forum-image' => 'nullable|image|mimes:jpg,jpeg,png'
         ]);
 
@@ -107,7 +119,7 @@ class ForumController extends Controller
             $post = Forum::where('postID', $request->postID)->limit(1)->update(['image' => $imagePathDB]); 
         }
 
-        Alert::info('Cerita Berhasil Diperbaharui!', 'Cerita Anda berhasil diperbaharui.');
+        Alert::success('Cerita Berhasil Diperbaharui!', 'Cerita anda berhasil diperbaharui.');
 
 
         return redirect(url('/forum/posts/' . $request->postID))->with('success', "Post Created");

@@ -9,6 +9,7 @@
         .profil {
             width: 10%;
             margin-bottom: 5px;
+            border-radius: 50%;
         }
 
         .onklik {
@@ -208,7 +209,11 @@
                     </div>
                     <div class="datakanan">
                         <h5>{{ $user->firstname }}</h5>
-                        <h5>{{ $user->lastname }}</h5>
+                        @if ($user->lastname == null)
+                            &nbsp;
+                        @else
+                            <h5>{{ $user->lastname }}</h5>
+                        @endif
                         <h5>{{ $user->username }}</h5>
                         <h5>{{ $user->email }}</h5>
                         <h5>{{ $user->phone }}</h5>
@@ -231,12 +236,14 @@
                 @if ($posts->isEmpty())
                     <div class="empty-forum">
                         <h3>Belum ada pengalaman yang diunggah.</h3>
-                        <div class="share-empty">
-                            <div class="add-button-empty"><i class="fas fa-plus" id="add-icon"></i></div>
-                            <div class="empty-text">
-                                <h3><b>Bagi Pengalaman?</b></h3>
+                        <a href="/upload-forum">
+                            <div class="share-empty">
+                                <div class="add-button-empty"><i class="fas fa-plus" id="add-icon"></i></div>
+                                <div class="empty-text">
+                                    <h3><b>Bagi Pengalaman?</b></h3>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 @else
                     @foreach ($posts as $post)
@@ -262,7 +269,7 @@
                                         </div>
                                     </div>
                                     <div class="tombolselengkapnya"><button
-                                            onclick="window.location.href='{{ url('/forum/posts') }}/{{ $post->postID }}'"
+                                            onclick="window.location.href='{{ url('/forum/my/posts') }}/{{ $post->postID }}'"
                                             class="selengkapnya">Baca
                                             Selengkapnya</button></div>
                                 </div>

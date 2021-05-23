@@ -35,6 +35,7 @@
     <div id="auth-layout" class="main-container">
         @yield('content')
         @include('sweetalert::alert')
+        <?php Session::forget('sweet_alert'); ?> 
     </div>
     <div>
         @include('inc.footer')

@@ -81,12 +81,15 @@
             </div>
             <div class="columnright">
                 <img src="{{ asset('storage' . $user->avatar) }}" class="profil">
-                <h2><b>{{ $user->firstname . ' ' . $user->lastname }}<b></h2>
+                <h2><b>{{ $user->firstname . ' ' . $user->lastname }}</b></h2>
+                    <div class="validation-show" style="max-width:47%;margin:auto;text-align:left;">
+                        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+                    </div>
                 <form action="{{ url('/reset-password') }}" method="POST">
                     @csrf
-                    <input type="password" placeholder="Kata Sandi Baru" name="password" required>
+                    <input type="password" placeholder="Kata Sandi Baru" name="password" />
                     <div>
-                        <input type="password" placeholder="Konfirmasi Kata Sandi" name="password_confirmation" required>
+                        <input type="password" placeholder="Konfirmasi Kata Sandi" name="password_confirmation" />
                     </div>
                     <div class="button">
                         <button type="submit">Simpan</button>

@@ -123,6 +123,9 @@
         .delete-post{
             font-size: 18px;
         }
+        .validation-show{
+            margin: 0 50px;
+        }
     </style>
 
     <main>
@@ -144,7 +147,9 @@
             </div>
 
         </div>
-
+        <div class="validation-show">
+            <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        </div>
         <form method="POST" action="{{ url('/edit-forum') }}" enctype="multipart/form-data">
             @csrf
             <div class="upload">

@@ -40,6 +40,10 @@ Run the database migrations (**Set the database connection in .env before migrat
 
     php artisan migrate
 
+Create link for database and storage
+
+    php artisan storage:link
+
 Start the local development server
 
     php artisan serve
@@ -54,6 +58,8 @@ You can now access the server at http://localhost:8000
     npm install
     cp .env.example .env
     php artisan key:generate
+    php artisan migrate
+    php artisan storage:link
     
 **Make sure you set the correct database connection information before running the migrations** [Environment variables](#environment-variables)
 

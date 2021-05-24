@@ -26,27 +26,25 @@ class PasswordResetLinkController extends Controller
         $request->validate([
             'email' => 'required|email',
         ]);
-        
+
         $user = Password::getUser($request->only('email'));
 
         if (is_null($user)) {
             return back()->withInput($request->only('email'))->withErrors(['email' => __('passwords.user')]);
         }
 
-        try{
+        try {
             $details =
                 [
                     'nama' => $user->firstname
                 ];
 
             Mail::to($request->email)->send(new PasswordMail($details));
-            $status=true;
+            $status = true;
             $request->session()->put('email', $request->input('email'));
             Alert::info('Email pemulihan telah dikirim.', ' Mohon cek pesan masuk Email Anda.');
-            
-        }
-        catch(\Exception $e){
-            $status=false;
+        } catch (\Exception $e) {
+            $status = false;
             Alert::warning("Terjadi Kesalahan pada Sistem", 'Mohon mencoba lagi dalam beberapa menit.');
         }
 

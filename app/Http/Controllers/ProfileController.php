@@ -14,32 +14,41 @@ class ProfileController extends Controller
 {
     public function update(UpdateProfileRequest $request)
     {
-        $request->authorize();
+        try {
+            $request->authorize();
 
-        auth()->user()->update($request->only('firstname', 'lastname', 'username', 'email', 'phone'));
+            auth()->user()->update($request->only('firstname', 'lastname', 'username', 'email', 'phone'));
 
-        if ($request->hasFile('avatar')) {
-            $image = $request->file('avatar');
-            $imageName = $request['username'];
-            $avatarPath = $image->storeAs('public/avatars/', $imageName . '.jpeg');
-            $avatarPathDB = substr($avatarPath, 6);
-            auth()->user()->update(['avatar' => $avatarPathDB]);
+            if ($request->hasFile('avatar')) {
+                $image = $request->file('avatar');
+                $imageName = $request['username'];
+                $avatarPath = $image->storeAs('public/avatars/', $imageName . '.jpeg');
+                $avatarPathDB = substr($avatarPath, 6);
+                auth()->user()->update(['avatar' => $avatarPathDB]);
+            }
+
+            Alert::success('Profil Berhasil Diperbaharui!', 'Selamat, profil Anda telah berhasil diperbaharui.');
+        } catch (\Exception $e) {
+            Alert::warning("Terjadi Kesalahan pada Sistem", 'Mohon mencoba lagi dalam beberapa menit.');
+            return redirect(url('/sunting-profil'));
         }
-
-        Alert::success('Profil Berhasil Diperbaharui!', 'Selamat, profil Anda telah berhasil diperbaharui.');
-
         return redirect(url('/lihat-profil'));
     }
 
     public function updatePassword(UpdatePasswordRequest $request)
     {
-        $request->authorize();
+        try {
+            $request->authorize();
 
-        if (Hash::check($request->input('password'), Auth::user()->password)) {
-            auth()->user()->update(['password' => Hash::make($request->input('password_new'))]);
-            Alert::success('Kata Sandi Berhasil Diperbaharui!', 'Selamat, kata sandi Anda telah berhasil diperbaharui.');
+            if (Hash::check($request->input('password'), Auth::user()->password)) {
+                auth()->user()->update(['password' => Hash::make($request->input('password_new'))]);
+                Alert::success('Kata Sandi Berhasil Diperbaharui!', 'Selamat, kata sandi Anda telah berhasil diperbaharui.');
 
-            return redirect(url('/lihat-profil'));;
+                return redirect(url('/lihat-profil'));;
+            }
+        } catch (\Exception $e) {
+            Alert::warning("Terjadi Kesalahan pada Sistem", 'Mohon mencoba lagi dalam beberapa menit.');
+            redirect(url('/change-password'));
         }
 
         return back()->withErrors(['email' => __('passwords.pw_baru')]);

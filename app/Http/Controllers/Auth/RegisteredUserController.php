@@ -36,38 +36,43 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'firstname' => 'required|string|max:255',
-            'lastname' => 'nullable|string|max:255',
-            'username' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|confirmed|min:8',
-            'avatar' => 'image|mimes:jpg,jpeg,png'
-        ]);
-        
-        if($request->hasFile('avatar')) {
-            $image = $request->file('avatar');
-            $imageName = $request['username'];  
-            $avatarPath = $image->storeAs('public/avatars/', $imageName.'.jpeg');
-            $avatarPathDB= substr($avatarPath, 6);
-        }
-        else{
-            $avatarPathDB = "/avatars//profilAvatar.png";
-        }
-        
-        $user = User::create([
-            'firstname' => $request->firstname,
-            'lastname' => $request->lastname,
-            'username' => $request->username,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'avatar' => $avatarPathDB,
-            'phone' => $request->phone,
-        ]);
+        try {
+            $request->validate([
+                'firstname' => 'required|string|max:255',
+                'lastname' => 'nullable|string|max:255',
+                'username' => 'required|string|max:255',
+                'email' => 'required|string|email|max:255|unique:users',
+                'password' => 'required|string|confirmed|min:8',
+                'avatar' => 'image|mimes:jpg,jpeg,png'
+            ]);
 
-        event(new Registered($user));
+            if ($request->hasFile('avatar')) {
+                $image = $request->file('avatar');
+                $imageName = $request['username'];
+                $avatarPath = $image->storeAs('public/avatars/', $imageName . '.jpeg');
+                $avatarPathDB = substr($avatarPath, 6);
+            } else {
+                $avatarPathDB = "/avatars//profilAvatar.png";
+            }
 
-        Alert::success('Pendaftaran Berhasil!', "Terima kasih telah mendaftar di CancerShare! Yuk, jelajahi kebutuhanmu!");
+            $user = User::create([
+                'firstname' => $request->firstname,
+                'lastname' => $request->lastname,
+                'username' => $request->username,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'avatar' => $avatarPathDB,
+                'phone' => $request->phone,
+            ]);
+
+            event(new Registered($user));
+
+            Alert::success('Pendaftaran Berhasil!', "Terima kasih telah mendaftar di CancerShare! Yuk, jelajahi kebutuhanmu!");
+        } catch (\Exception $e) {
+            Alert::warning("Terjadi Kesalahan pada Sistem", 'Mohon mencoba lagi dalam beberapa menit.');
+            return redirect(url('/register'));
+        }
+
 
         return redirect(url('/login'));
     }

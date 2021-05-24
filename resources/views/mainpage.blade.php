@@ -124,7 +124,7 @@
         .card-edukasi-content {
             padding: 5%;
             width: 20vw;
-            height: 60vh;
+            height: 63vh;
             display: flex;
             flex-flow: column;
         }
@@ -236,7 +236,7 @@
 
         .card-news {
             background-color: #033D68;
-            padding: 5px 0px 5px 10px;
+            padding: 5px 0px 5px 5px;
         }
 
         .card {
@@ -262,6 +262,7 @@
 
         #synopsis-forum {
             text-align: justify;
+            font-size: 14px;
         }
 
         .card-forum-main {

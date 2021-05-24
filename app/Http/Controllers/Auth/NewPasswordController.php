@@ -44,15 +44,17 @@ class NewPasswordController extends Controller
 
         $email = $request->session()->get('email');
 
-        try{
+        try {
             $update = User::where('email', $email)->update(['password' => Hash::make($request->input('password'))]);
             $request->session()->forget('email');
-            $status=true;
-        } catch(\Exception $e){
-            $status=false;
+            $status = true;
+        } catch (\Exception $e) {
+            Alert::warning("Terjadi Kesalahan pada Sistem", 'Mohon mencoba lagi dalam beberapa menit.');
+            $status = false;
+            return back();
         }
 
-        if($status==true){
+        if ($status == true) {
             Alert::success('Akun Berhasil Dipulihkan!', "Selamat, akun Anda berhasil dipulihkan! Silahkan masuk dengan kata sandi yang baru.");
         }
 
@@ -64,7 +66,12 @@ class NewPasswordController extends Controller
             : back()->withErrors(['email' => __($status)]);
     }
 
-    public function getDataUser(Request $request){
+    public function getDataUser(Request $request)
+    {
+        if ($request->session()->get('email') == null) {
+            Alert::warning("Tidak bisa membuka halaman tersebut", 'Mohon mencoba lagi dalam beberapa menit setelah anda mengirimkan permintaan untuk mengubah password.');
+            return redirect('/');
+        }
         $email = $request->session()->get('email');
 
         $user =  User::where('email', $email)->first();

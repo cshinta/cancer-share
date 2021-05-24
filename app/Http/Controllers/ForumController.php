@@ -57,71 +57,82 @@ class ForumController extends Controller
 
     public function CreatePost(Request $request)
     {
-        $request->validate([
-            'title' => 'required|string',
-            'content' => 'required|string',
-            'type' => 'required|not_in:0',
-            'forum-image' => 'nullable|image|mimes:jpg,jpeg,png'
-        ]);
+        try {
+            $request->validate([
+                'title' => 'required|string',
+                'content' => 'required|string',
+                'type' => 'required|not_in:0',
+                'forum-image' => 'nullable|image|mimes:jpg,jpeg,png'
+            ]);
 
-        if ($request->hasFile('forum-image')) {
-            $image = $request->file('forum-image');
-            $imageName = $request['title'] . Auth::user()->id;
-            $imagePath = $image->storeAs('public/forum/', $imageName . '.jpeg');
-            $imagePathDB = substr($imagePath, 6);
-        } else {
-            $imagePathDB = "null";
+            if ($request->hasFile('forum-image')) {
+                $image = $request->file('forum-image');
+                $imageName = $request['title'] . Auth::user()->id;
+                $imagePath = $image->storeAs('public/forum/', $imageName . '.jpeg');
+                $imagePathDB = substr($imagePath, 6);
+            } else {
+                $imagePathDB = "null";
+            }
+
+            $post = new Forum;
+            $post->title = $request->title;
+            $post->content = $request->content;
+            $post->id = Auth::user()->id;
+            $post->image = $imagePathDB;
+            $post->type = $request->type;
+            $post->save();
+
+            Alert::success('Cerita Berhasil Diunggah!', 'Terima kasih telah berbagi pengalaman kepada Kami! Ceritamu akan dapat dilihat oleh semua orang yang mengakses halaman ini. ');
+        } catch (\Exception $e) {
+            Alert::warning("Terjadi Kesalahan pada Sistem", 'Mohon mencoba lagi dalam beberapa menit.');
+            return (redirect(url('/upload-forum')));
         }
-
-        $post = new Forum;
-        $post->title = $request->title;
-        $post->content = $request->content;
-        $post->id = Auth::user()->id;
-        $post->image = $imagePathDB;
-        $post->type = $request->type;
-        $post->save();
-
-        Alert::success('Cerita Berhasil Diunggah!', 'Terima kasih telah berbagi pengalaman kepada Kami! Ceritamu akan dapat dilihat oleh semua orang yang mengakses halaman ini. ');
-
         return redirect(url('/forum'));
     }
 
     public function DeletePost($id)
     {
-        Forum::where('postID', $id)->limit(1)->delete();
+        try {
 
-        Alert::info('Cerita Telah Dihapus!', 'Cerita Anda telah dihapus dari halaman dan tidak dapat diakses lagi oleh pengguna lain.');
+            Forum::where('postID', $id)->limit(1)->delete();
 
+            Alert::info('Cerita Telah Dihapus!', 'Cerita Anda telah dihapus dari halaman dan tidak dapat diakses lagi oleh pengguna lain.');
+        } catch (\Exception $e) {
+            Alert::warning("Terjadi Kesalahan pada Sistem", 'Mohon mencoba lagi dalam beberapa menit.');
+            return redirect(url('/forum'));
+        }
         return redirect(url('/lihat-profil'))->with('success', "Post Deleted");
     }
 
     public function UpdatePost(Request $request)
     {
+        try {
+            $request->validate([
+                'title' => 'required|string',
+                'content' => 'required|string',
+                'type' => 'required',
+                'forum-image' => 'nullable'
+            ]);
 
-        $request->validate([
-            'title' => 'required|string',
-            'content' => 'required|string',
-            'type' => 'required',
-            'forum-image' => 'nullable'
-        ]);
+            if ($request->hasFile('forum-image')) {
+                $image = $request->file('forum-image');
+                $imageName = $request['title'] . Auth::user()->id;
+                $imagePath = $image->storeAs('public/forum/', $imageName . '.jpeg');
+                $imagePathDB = substr($imagePath, 6);
+            } else {
+                $imagePathDB = "null";
+            }
 
-        if ($request->hasFile('forum-image')) {
-            $image = $request->file('forum-image');
-            $imageName = $request['title'] . Auth::user()->id;
-            $imagePath = $image->storeAs('public/forum/', $imageName . '.jpeg');
-            $imagePathDB = substr($imagePath, 6);
-        } else {
-            $imagePathDB = "null";
+            $post = Forum::where('postID', $request->postID)->limit(1)->update(['title' => $request->title, "content" => $request->content, "type" => $request->type]);
+            if ($imagePathDB != "null") {
+                $post = Forum::where('postID', $request->postID)->limit(1)->update(['image' => $imagePathDB]);
+            }
+
+            Alert::success('Cerita Berhasil Diperbaharui!', 'Cerita anda berhasil diperbaharui.');
+        } catch (\Exception $e) {
+            Alert::warning("Terjadi Kesalahan pada Sistem", 'Mohon mencoba lagi dalam beberapa menit.');
+            return redirect(url('/forum'));
         }
-
-        $post = Forum::where('postID', $request->postID)->limit(1)->update(['title' => $request->title, "content" => $request->content, "type"=>$request->type]); 
-        if ($imagePathDB != "null") {
-            $post = Forum::where('postID', $request->postID)->limit(1)->update(['image' => $imagePathDB]); 
-        }
-
-        Alert::success('Cerita Berhasil Diperbaharui!', 'Cerita anda berhasil diperbaharui.');
-
-
         return redirect(url('/forum/posts/' . $request->postID))->with('success', "Post Created");
     }
 
